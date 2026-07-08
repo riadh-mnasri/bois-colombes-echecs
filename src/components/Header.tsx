@@ -13,10 +13,8 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-line/70 bg-paper/90 backdrop-blur">
       <Container className="flex h-20 items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
-          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-forest text-gold-soft">
-            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden>
-              <path d="M12 2 9.5 6h5L12 2Zm-1 5-2 5h6l-2-5h-2Zm-3 6-1.5 8h11L16 13H8Z" />
-            </svg>
+          <span className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-forest text-lg leading-none text-gold-soft">
+            ♞
           </span>
           <span className="font-display text-lg font-medium leading-tight">
             Cercle d&rsquo;Échecs

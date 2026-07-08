@@ -16,14 +16,14 @@ export function ArticleCard({ article }: { article: Article }) {
   });
 
   return (
-    <article className="overflow-hidden rounded-2xl border border-line bg-paper">
-      <div className="relative aspect-[16/10] w-full">
+    <article className="group overflow-hidden rounded-2xl border border-line bg-paper shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-lg">
+      <div className="relative aspect-[16/10] w-full overflow-hidden">
         <Image
           src={article.image}
           alt={article.title}
           fill
           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-          className="object-cover"
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
       </div>
       <div className="p-6">

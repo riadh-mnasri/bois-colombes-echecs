@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -8,6 +9,7 @@ import {
   adultPricing,
   membershipIncludes,
 } from "@/lib/content";
+import teamPhoto from "../../../public/photos/top-jeunes-equipe.jpg";
 
 export const metadata: Metadata = {
   title: "Nous rejoindre — Cercle d'Échecs de Bois-Colombes",
@@ -17,13 +19,22 @@ export const metadata: Metadata = {
 export default function NousRejoindrePage() {
   return (
     <>
-      <section className="bg-forest-deep py-20 text-paper">
-        <Container>
+      <section className="relative overflow-hidden text-paper">
+        <Image
+          src={teamPhoto}
+          alt="Équipe Top Jeunes du Cercle d'Échecs de Bois-Colombes, vice-championne de France"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[center_68%]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-forest-deep/85 to-forest-deep/55" />
+        <Container className="relative py-20">
           <p className="mb-4 text-sm font-medium uppercase tracking-[0.25em] text-gold-soft">Nous rejoindre</p>
           <h1 className="max-w-2xl font-display text-4xl font-medium sm:text-5xl">
             Une place vous attend, quel que soit votre âge ou votre niveau.
           </h1>
-          <p className="mt-6 max-w-xl text-paper/75">
+          <p className="mt-6 max-w-xl text-paper/80">
             Essai gratuit, cours par niveaux, aides financières possibles. L&rsquo;adhésion donne accès à la
             licence FFE, aux cours collectifs et au club pendant les heures d&rsquo;ouverture.
           </p>
@@ -35,7 +46,7 @@ export default function NousRejoindrePage() {
           <SectionHeading eyebrow="Jeunes" title="Adhésion jeunes — saison en cours" />
 
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
-            <div className="rounded-2xl border border-line p-6">
+            <div className="rounded-2xl border border-line p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-lg">
               <p className="text-sm font-medium uppercase tracking-wide text-wood">Tarif</p>
               <p className="mt-3 font-display text-3xl font-medium">{youthPricing.local}</p>
               <p className="text-sm text-ink-soft">Bois-Colombien(ne)s</p>
@@ -44,7 +55,7 @@ export default function NousRejoindrePage() {
               <p className="mt-4 text-sm text-ink-soft">{youthPricing.note}</p>
             </div>
 
-            <div className="rounded-2xl border border-line p-6 lg:col-span-2">
+            <div className="rounded-2xl border border-line p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-lg lg:col-span-2">
               <p className="text-sm font-medium uppercase tracking-wide text-wood">Catégories d&rsquo;âge</p>
               <div className="mt-4 grid grid-cols-2 gap-x-6 gap-y-2 text-sm sm:grid-cols-3">
                 {youthCategories.map((c) => (
@@ -79,7 +90,7 @@ export default function NousRejoindrePage() {
           <SectionHeading eyebrow="Adultes" title="Adhésion adultes — saison en cours" />
 
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
-            <div className="rounded-2xl border border-line bg-paper p-6">
+            <div className="rounded-2xl border border-line bg-paper p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-lg">
               <p className="text-sm font-medium uppercase tracking-wide text-wood">Séniors</p>
               <p className="mt-1 text-xs text-ink-soft">{adultPricing.senior.note}</p>
               <p className="mt-3 font-display text-3xl font-medium">{adultPricing.senior.local}</p>
@@ -88,7 +99,7 @@ export default function NousRejoindrePage() {
               <p className="text-sm text-ink-soft">Hors Bois-Colombes</p>
             </div>
 
-            <div className="rounded-2xl border border-line bg-paper p-6">
+            <div className="rounded-2xl border border-line bg-paper p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-lg">
               <p className="text-sm font-medium uppercase tracking-wide text-wood">Vétérans</p>
               <p className="mt-1 text-xs text-ink-soft">{adultPricing.veteran.note}</p>
               <p className="mt-3 font-display text-3xl font-medium">{adultPricing.veteran.local}</p>

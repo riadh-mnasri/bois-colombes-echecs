@@ -1,30 +1,35 @@
+import Image from "next/image";
 import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ArticleCard } from "@/components/ArticleCard";
 import { stats, recentResults, orientations, club, articles } from "@/lib/content";
+import festivalPhoto from "../../public/photos/festival-jeunes.jpg";
 
 export default function HomePage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-forest-deep text-paper">
-        <div
-          className="pointer-events-none absolute inset-0 opacity-[0.08]"
-          style={{
-            backgroundImage:
-              "repeating-conic-gradient(#faf6ee 0% 25%, transparent 0% 50%)",
-            backgroundSize: "80px 80px",
-          }}
-          aria-hidden
+      <section className="relative overflow-hidden text-paper">
+        <Image
+          src={festivalPhoto}
+          alt="Tournoi jeunes organisé par le Cercle d'Échecs de Bois-Colombes"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
         />
-        <Container className="relative py-28 sm:py-36">
+        <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-forest-deep/85 to-forest-deep/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-forest-deep/70 via-forest-deep/20 to-transparent" />
+
+        <Container className="relative py-28 sm:py-40">
           <p className="mb-5 text-sm font-medium uppercase tracking-[0.25em] text-gold-soft">
             Club Formateur FFE &middot; Bois-Colombes (92)
           </p>
           <h1 className="max-w-3xl font-display text-4xl font-medium leading-[1.1] sm:text-6xl">
-            Le jeu d&rsquo;échecs se joue et se transmet à Bois-Colombes depuis plus de 30 ans.
+            Le jeu d&rsquo;échecs se joue et se transmet à Bois-Colombes{" "}
+            <span className="font-display italic text-gold-soft">depuis plus de 30 ans</span>.
           </h1>
-          <p className="mt-6 max-w-xl text-lg text-paper/75">
+          <p className="mt-6 max-w-xl text-lg text-paper/80">
             22 titres de Champion(ne) de France Jeunes, une école d&rsquo;échecs ouverte à tous les âges
             et une équipe d&rsquo;entraîneurs de haut niveau. Rejoignez le cercle.
           </p>
@@ -34,6 +39,15 @@ export default function HomePage() {
               Découvrir le club
             </Button>
           </div>
+        </Container>
+      </section>
+
+      <section className="bg-forest-deep py-10 text-center text-paper">
+        <Container>
+          <p className="mx-auto max-w-3xl font-display text-xl italic leading-relaxed text-paper/85 sm:text-2xl">
+            &laquo;&nbsp;Développer la pratique sportive du jeu d&rsquo;échecs, en éduquant, formant,
+            responsabilisant.&nbsp;&raquo;
+          </p>
         </Container>
       </section>
 
@@ -77,7 +91,10 @@ export default function HomePage() {
           />
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {orientations.map((item) => (
-              <div key={item.title} className="rounded-2xl border border-line bg-paper p-6">
+              <div
+                key={item.title}
+                className="rounded-2xl border border-line bg-paper p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-lg"
+              >
                 <h3 className="font-display text-xl font-medium">{item.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-ink-soft">{item.description}</p>
               </div>
@@ -96,7 +113,10 @@ export default function HomePage() {
           />
           <div className="mt-12 grid gap-6 sm:grid-cols-3">
             {recentResults.map((season) => (
-              <div key={season.year} className="rounded-2xl border border-paper/15 p-6">
+              <div
+                key={season.year}
+                className="rounded-2xl border border-paper/15 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-gold-soft/60 hover:bg-paper/[0.04]"
+              >
                 <p className="font-display text-3xl font-medium text-gold-soft">{season.year}</p>
                 <ul className="mt-4 space-y-2 text-sm text-paper/80">
                   {season.highlights.map((h) => (
