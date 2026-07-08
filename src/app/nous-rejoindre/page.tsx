@@ -65,6 +65,12 @@ export default function NousRejoindrePage() {
               ))}
             </ul>
           </div>
+
+          <div className="mt-6">
+            <Button href={youthPricing.registrationUrl} external>
+              S&rsquo;inscrire — Adhésion jeunes 2026/2027
+            </Button>
+          </div>
         </Container>
       </section>
 
@@ -101,6 +107,12 @@ export default function NousRejoindrePage() {
             </div>
           </div>
           <p className="mt-6 text-sm text-ink-soft">{adultPricing.note}</p>
+
+          <div className="mt-6">
+            <Button href={adultPricing.registrationUrl} external>
+              S&rsquo;inscrire — Adhésion adultes 2026/2027
+            </Button>
+          </div>
         </Container>
       </section>
 
@@ -121,8 +133,8 @@ export default function NousRejoindrePage() {
           <div className="rounded-2xl bg-forest p-8 text-paper">
             <h3 className="font-display text-2xl font-medium">Prêt·e à vous inscrire ?</h3>
             <p className="mt-3 text-paper/75">
-              Contactez le club pour organiser un essai gratuit ou obtenir le bulletin d&rsquo;inscription
-              de la saison.
+              L&rsquo;inscription se fait en ligne via BilletWeb (liens ci-dessus). Pour organiser un essai
+              gratuit ou toute autre question, contactez le club.
             </p>
             <div className="mt-6">
               <Button href="/contact" variant="outline-light">

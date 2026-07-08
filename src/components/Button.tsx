@@ -17,14 +17,26 @@ export function Button({
   children,
   variant = "solid",
   className = "",
+  external = false,
 }: {
   href: string;
   children: ReactNode;
   variant?: Variant;
   className?: string;
+  external?: boolean;
 }) {
+  const classes = `${base} ${variants[variant]} ${className}`;
+
+  if (external) {
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" className={classes}>
+        {children}
+      </a>
+    );
+  }
+
   return (
-    <Link href={href} className={`${base} ${variants[variant]} ${className}`}>
+    <Link href={href} className={classes}>
       {children}
     </Link>
   );

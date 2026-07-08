@@ -185,6 +185,8 @@ export const youthPricing = {
     "Mercredi et samedi — Benjamin et +  : 15h30–17h30",
     "Tournois Pizzas — environ 7 vendredis soir dans la saison",
   ],
+  registrationUrl:
+    "https://www.billetweb.fr/shop.php?event=adhesions-jeunes-2026-2027-cercle-dechecs-de-bois-colombes",
 };
 
 export const adultPricing = {
@@ -197,6 +199,8 @@ export const adultPricing = {
     "Jeudi 20h30–22h40 — Cours débutants / intermédiaires",
     "Mercredi et vendredi — Parties libres",
   ],
+  registrationUrl:
+    "https://www.billetweb.fr/shop.php?event=adhesions-adultes-2026-2027-cercle-dechecs-de-bois-colombes",
 };
 
 export const membershipIncludes = [
