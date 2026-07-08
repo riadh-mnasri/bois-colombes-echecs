@@ -3,6 +3,7 @@ import { Container } from "./Container";
 
 const links = [
   { href: "/le-club", label: "Le Club" },
+  { href: "/actualites", label: "Actualités" },
   { href: "/nous-rejoindre", label: "Nous rejoindre" },
   { href: "/contact", label: "Contact" },
 ];

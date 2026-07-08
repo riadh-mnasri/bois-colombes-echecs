@@ -1,3 +1,51 @@
+export const articles = [
+  {
+    slug: "top-jeunes-saison-2025-2026",
+    title: "Top Jeunes — Saison 2025-2026 : vice-champions de France",
+    date: "2026-06-04",
+    excerpt:
+      "En Top Jeunes, la plus haute division nationale, l'équipe du club termine vice-championne de France, 2e sur 8 équipes. Bravo à Iskander, Joshua, Adhyayan, Charles, Mathias, Vaishak, Leo, Sakithyan et Gurvann.",
+    image:
+      "https://www.bois-colombes-echecs.com/wp-content/uploads/2026/01/WhatsApp-Image-2026-05-25-at-16.02.17-7-1-e1780843655921.jpeg",
+  },
+  {
+    slug: "22e-bois-colombes-chess-master-2025",
+    title: "22e Bois-Colombes Chess Master : record de participation",
+    date: "2025-12-29",
+    excerpt:
+      "604 joueurs de 40 fédérations réunis du 26 au 30 décembre 2025. Anatole Vlachos remporte l'Open A devant les maîtres internationaux Aronyak Ghosh et Liyanage Ranindu Dilshan, et Wenbin Shao y réalise une norme de maître international.",
+    image:
+      "https://www.bois-colombes-echecs.com/wp-content/uploads/2025/12/Visu-accueilv3-1-e1767043040849.jpg",
+  },
+  {
+    slug: "championnat-des-hauts-de-seine-2025-2026",
+    title: "Championnat des Hauts-de-Seine 2025/2026 : 3 titres pour le club",
+    date: "2025-11-23",
+    excerpt:
+      "Les jeunes du club décrochent 3 titres de champion et de nombreux podiums, dont Seji Mnasri (U12), Lili Pinçon (U12) et Cecilia Pereira Garza (U16).",
+    image:
+      "https://www.bois-colombes-echecs.com/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-23-at-19.21.23.jpeg",
+  },
+  {
+    slug: "festival-jeunes-idf-etape-1-bois-colombes-2025",
+    title: "Festival Jeunes IdF — Étape 1 à Bois-Colombes",
+    date: "2025-09-25",
+    excerpt:
+      "Le club organise la 1ère étape du Festival Jeunes IdF le 31 août 2025 : un open en 9 rondes, un challenge jeunes pour les débutants et un tournoi accompagnateurs.",
+    image:
+      "https://www.bois-colombes-echecs.com/wp-content/uploads/2025/09/PXL_20250831_151719117.MP_-1.jpg",
+  },
+  {
+    slug: "championnat-de-france-2025",
+    title: "Championnat de France 2025 à Vichy",
+    date: "2025-08-24",
+    excerpt:
+      "Émile Bassini remporte l'Open Accession Roger Ferry avec 7 points sur 9 rondes, lors du Championnat de France disputé à Vichy.",
+    image:
+      "https://www.bois-colombes-echecs.com/wp-content/uploads/2026/06/54742104236_2d1978c3e0_o-1-scaled-e1780952812275.jpg",
+  },
+];
+
 export const club = {
   name: "Cercle d'Échecs de Bois-Colombes",
   shortName: "CEBC",

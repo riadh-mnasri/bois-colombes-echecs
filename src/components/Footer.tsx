@@ -17,6 +17,7 @@ export function Footer() {
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-wood">Le club</p>
           <ul className="mt-4 space-y-2 text-sm text-ink-soft">
             <li><Link href="/le-club" className="hover:text-ink">Équipe &amp; palmarès</Link></li>
+            <li><Link href="/actualites" className="hover:text-ink">Actualités</Link></li>
             <li><Link href="/nous-rejoindre" className="hover:text-ink">Adhésion</Link></li>
             <li><Link href="/contact" className="hover:text-ink">Contact</Link></li>
           </ul>

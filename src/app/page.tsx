@@ -1,7 +1,8 @@
 import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
 import { SectionHeading } from "@/components/SectionHeading";
-import { stats, recentResults, orientations, club } from "@/lib/content";
+import { ArticleCard } from "@/components/ArticleCard";
+import { stats, recentResults, orientations, club, articles } from "@/lib/content";
 
 export default function HomePage() {
   return (
@@ -44,6 +45,26 @@ export default function HomePage() {
               <p className="mt-2 text-sm text-ink-soft">{stat.label}</p>
             </div>
           ))}
+        </Container>
+      </section>
+
+      <section className="border-b border-line/70 py-24">
+        <Container>
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <SectionHeading
+              eyebrow="Actualités"
+              title="Les derniers tournois du club"
+              description="Résultats, participations et temps forts, en images."
+            />
+            <Button href="/actualites" variant="outline-dark">
+              Toutes les actualités
+            </Button>
+          </div>
+          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {articles.slice(0, 3).map((article) => (
+              <ArticleCard key={article.slug} article={article} />
+            ))}
+          </div>
         </Container>
       </section>
 
