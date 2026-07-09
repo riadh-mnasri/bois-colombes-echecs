@@ -5,8 +5,9 @@ import { usePathname } from "next/navigation";
 
 const links = [
   { href: "/le-club", label: "Le Club" },
+  { href: "/competitions", label: "Compétitions" },
   { href: "/actualites", label: "Actualités" },
-  { href: "/tournois-pizzas", label: "Tournois Pizzas" },
+  { href: "/agenda", label: "Agenda" },
   { href: "/nous-rejoindre", label: "Nous rejoindre" },
   { href: "/contact", label: "Contact" },
 ];

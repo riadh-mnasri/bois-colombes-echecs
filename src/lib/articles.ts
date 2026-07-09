@@ -43,3 +43,20 @@ export async function getPizzaTournamentArticles(): Promise<Article[]> {
     (a) => /^vendredi\s/i.test(a.title) || /pizza/i.test(a.title) || /pizza/i.test(a.slug)
   );
 }
+
+export async function getAdultTeamArticles(): Promise<Article[]> {
+  const articles = await getAllArticles();
+  return articles.filter((a) => /^nationale\s/i.test(a.title));
+}
+
+export async function getYouthCompetitionArticles(): Promise<Article[]> {
+  const articles = await getAllArticles();
+  return articles.filter(
+    (a) =>
+      /top jeunes/i.test(a.title) ||
+      /championnat/i.test(a.title) ||
+      /festival jeunes/i.test(a.title) ||
+      /grand prix jeunes/i.test(a.title) ||
+      /crit[ée]rium/i.test(a.title)
+  );
+}
