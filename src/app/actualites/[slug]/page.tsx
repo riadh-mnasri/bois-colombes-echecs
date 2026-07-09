@@ -41,25 +41,31 @@ export default async function ArticlePage(props: PageProps<"/actualites/[slug]">
 
   return (
     <article>
-      <section className="relative h-[60vh] min-h-[420px] overflow-hidden text-paper">
-        <ViewTransition name={`article-photo-${article.slug}`}>
-          <Image
-            src={article.images[0]}
-            alt={article.title}
-            fill
-            priority
-            sizes="100vw"
-            className="hero-photo object-cover"
-          />
-        </ViewTransition>
-        <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-forest-deep/75 to-forest-deep/35" />
-        <Container className="relative flex h-full flex-col justify-end pb-16">
-          <p className="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-gold-soft/40 px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] text-gold-soft">
+      <section className="bg-paper-dim py-16">
+        <Container className="max-w-2xl">
+          <p className="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-wood/30 px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] text-wood">
             Actualité &middot; {formattedDate}
           </p>
-          <h1 className="max-w-2xl font-display text-3xl font-medium leading-tight sm:text-5xl">
+          <h1 className="font-display text-3xl font-medium leading-tight text-ink sm:text-5xl">
             {article.title}
           </h1>
+        </Container>
+      </section>
+
+      <section className="pt-10">
+        <Container className="max-w-2xl">
+          <ViewTransition name={`article-photo-${article.slug}`}>
+            <div className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-line">
+              <Image
+                src={article.images[0]}
+                alt={article.title}
+                fill
+                priority
+                sizes="(min-width: 768px) 700px, 100vw"
+                className="object-cover"
+              />
+            </div>
+          </ViewTransition>
         </Container>
       </section>
 

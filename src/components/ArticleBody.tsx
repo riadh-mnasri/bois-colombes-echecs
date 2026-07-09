@@ -32,44 +32,42 @@ export function ArticleBody({
     };
   }, [openIndex, photos.length]);
 
-  const blocks: React.ReactNode[] = [];
-  const maxLength = Math.max(paragraphs.length, photos.length);
-
-  for (let i = 0; i < maxLength; i++) {
-    if (paragraphs[i]) {
-      blocks.push(
+  return (
+    <>
+      {paragraphs.map((paragraph, i) => (
         <p
           key={`p-${i}`}
           className={`mb-6 text-lg leading-relaxed text-ink-soft ${i === 0 ? "drop-cap" : ""}`}
         >
-          {paragraphs[i]}
+          {paragraph}
         </p>
-      );
-    }
+      ))}
 
-    if (photos[i]) {
-      blocks.push(
-        <button
-          key={`img-${i}`}
-          type="button"
-          onClick={() => setOpenIndex(i)}
-          className="group relative mb-8 block aspect-[3/2] w-full cursor-zoom-in overflow-hidden rounded-2xl border border-line"
-        >
-          <Image
-            src={photos[i]}
-            alt={`${alt}, photo ${i + 2}`}
-            fill
-            sizes="(min-width: 768px) 700px, 100vw"
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-        </button>
-      );
-    }
-  }
-
-  return (
-    <>
-      {blocks}
+      {photos.length > 0 && (
+        <div className="mt-10">
+          <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-wood">
+            Photos ({photos.length})
+          </p>
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+            {photos.map((src, i) => (
+              <button
+                key={src}
+                type="button"
+                onClick={() => setOpenIndex(i)}
+                className="group relative aspect-square overflow-hidden rounded-xl border border-line"
+              >
+                <Image
+                  src={src}
+                  alt={`${alt}, photo ${i + 2}`}
+                  fill
+                  sizes="(min-width: 640px) 33vw, 50vw"
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
 
       {openIndex !== null && (
         <div

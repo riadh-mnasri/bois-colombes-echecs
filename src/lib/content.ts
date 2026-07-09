@@ -226,3 +226,18 @@ export const membershipIncludes = [
   "Assurance Groupama pendant les activités et déplacements",
   "Aides possibles via le Pass+ Hauts-de-Seine ou la CAF",
 ];
+
+export const tournoisPizzas = {
+  description:
+    "Un format court et convivial, ouvert à tous les niveaux, dans une ambiance bon enfant : 6 rondes de 2×10 minutes en KO, deux catégories (moins de 1700 Elo et 1700 Elo et plus). Pas de points homologués, mais du champagne pour les vainqueurs.",
+  dates2025_2026: [
+    "Vendredi 3 octobre 2025",
+    "Vendredi 14 novembre 2025",
+    "Vendredi 12 décembre 2025",
+    "Vendredi 20 mars 2026",
+    "Vendredi 17 avril 2026",
+    "Vendredi 29 mai 2026",
+    "Vendredi 3 juillet 2026",
+  ],
+  note: "Inscription préalable requise auprès du club.",
+};
