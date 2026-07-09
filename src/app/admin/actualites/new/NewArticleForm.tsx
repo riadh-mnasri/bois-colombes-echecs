@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useState } from "react";
 import { createArticle, type CreateArticleState } from "@/app/actions/articles";
 
 export function NewArticleForm() {
@@ -8,6 +8,15 @@ export function NewArticleForm() {
     createArticle,
     undefined
   );
+  const [previews, setPreviews] = useState<string[]>([]);
+
+  function handlePhotosChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const files = Array.from(e.target.files ?? []);
+    setPreviews((old) => {
+      old.forEach((url) => URL.revokeObjectURL(url));
+      return files.map((file) => URL.createObjectURL(file));
+    });
+  }
 
   return (
     <form action={action} className="grid gap-5">
@@ -64,17 +73,32 @@ export function NewArticleForm() {
       </div>
 
       <div className="grid gap-1.5">
-        <label htmlFor="photo" className="text-sm font-medium">
-          Photo
+        <label htmlFor="photos" className="text-sm font-medium">
+          Photos (une ou plusieurs, la première sera la photo principale)
         </label>
         <input
-          id="photo"
-          name="photo"
+          id="photos"
+          name="photos"
           type="file"
           accept="image/*"
+          multiple
           required
+          onChange={handlePhotosChange}
           className="rounded-xl border border-line bg-paper px-4 py-3 text-sm outline-none focus:border-wood"
         />
+        {previews.length > 0 && (
+          <div className="mt-2 grid grid-cols-4 gap-2 sm:grid-cols-6">
+            {previews.map((src, i) => (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                key={src}
+                src={src}
+                alt={`Aperçu ${i + 1}`}
+                className="aspect-square w-full rounded-lg object-cover"
+              />
+            ))}
+          </div>
+        )}
       </div>
 
       {state?.error && <p className="text-sm text-red-700">{state.error}</p>}

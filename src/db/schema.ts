@@ -15,7 +15,7 @@ export const articles = pgTable("articles", {
   date: text("date").notNull(),
   excerpt: text("excerpt").notNull(),
   body: text("body").notNull(),
-  image: text("image").notNull(),
+  images: text("images").array().notNull(),
   authorId: uuid("author_id")
     .references(() => users.id)
     .notNull(),

@@ -6,8 +6,9 @@ export const articles = [
     excerpt:
       "En Top Jeunes, la plus haute division nationale, l'équipe du club termine vice-championne de France, 2e sur 8 équipes. Bravo à Iskander, Joshua, Adhyayan, Charles, Mathias, Vaishak, Leo, Sakithyan et Gurvann.",
     body: "En Top Jeunes, la plus haute division nationale des compétitions d'échecs jeunes, l'équipe du Cercle d'Échecs de Bois-Colombes termine vice-championne de France, avec un classement final de 2e place sur 8 équipes engagées.\n\nBravo à Iskander, Joshua, Adhyayan, Charles, Mathias, Vaishak, Leo, Sakithyan et Gurvann pour cette belle performance, ainsi qu'à leurs entraîneurs qui les ont accompagnés tout au long de la saison.",
-    image:
+    images: [
       "https://www.bois-colombes-echecs.com/wp-content/uploads/2026/01/WhatsApp-Image-2026-05-25-at-16.02.17-7-1-e1780843655921.jpeg",
+    ],
   },
   {
     slug: "22e-bois-colombes-chess-master-2025",
@@ -16,8 +17,9 @@ export const articles = [
     excerpt:
       "604 joueurs de 40 fédérations réunis du 26 au 30 décembre 2025. Anatole Vlachos remporte l'Open A devant les maîtres internationaux Aronyak Ghosh et Liyanage Ranindu Dilshan, et Wenbin Shao y réalise une norme de maître international.",
     body: "La 22e édition du Bois-Colombes Chess Master s'est tenue du 26 au 30 décembre 2025, avec un record de participation : 604 joueurs venus de 40 fédérations différentes, répartis sur trois divisions.\n\nAnatole Vlachos remporte l'Open A, devant les maîtres internationaux Aronyak Ghosh et Liyanage Ranindu Dilshan, respectivement 2e et 3e. Le joueur chinois Wenbin Shao y a par ailleurs réalisé une norme de maître international, une performance marquante de ce tournoi.",
-    image:
+    images: [
       "https://www.bois-colombes-echecs.com/wp-content/uploads/2025/12/Visu-accueilv3-1-e1767043040849.jpg",
+    ],
   },
   {
     slug: "championnat-des-hauts-de-seine-2025-2026",
@@ -26,8 +28,9 @@ export const articles = [
     excerpt:
       "Les jeunes du club décrochent 3 titres de champion et de nombreux podiums, dont Seji Mnasri (U12), Lili Pinçon (U12) et Cecilia Pereira Garza (U16).",
     body: "Le Championnat des Hauts-de-Seine 2025/2026 s'est déroulé les 8 et 9 novembre puis le 23 novembre 2025. Les jeunes du Cercle d'Échecs de Bois-Colombes y décrochent 3 titres de champion et de nombreux podiums dans plusieurs catégories d'âge.\n\nChampions du club : Seji Mnasri (U12), Lili Pinçon (U12) et Cecilia Pereira Garza (U16), accompagnés de plusieurs vice-champions et troisièmes places dans les catégories plus jeunes.",
-    image:
+    images: [
       "https://www.bois-colombes-echecs.com/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-23-at-19.21.23.jpeg",
+    ],
   },
   {
     slug: "festival-jeunes-idf-etape-1-bois-colombes-2025",
@@ -36,8 +39,9 @@ export const articles = [
     excerpt:
       "Le club organise la 1ère étape du Festival Jeunes IdF le 31 août 2025 : un open en 9 rondes, un challenge jeunes pour les débutants et un tournoi accompagnateurs.",
     body: "Le Cercle d'Échecs de Bois-Colombes a organisé le 31 août 2025 la première étape du Festival Jeunes IdF, avec trois tournois distincts : un open principal en 9 rondes à cadence rapide (12 minutes + 3 secondes par coup), un challenge jeunes destiné aux débutants, et un tournoi ouvert aux accompagnateurs.\n\nLes classements, calculés selon les normes de performance FIDE d'octobre 2025, ont mis en valeur les progrès des jeunes joueurs dans leurs différentes catégories d'âge.",
-    image:
+    images: [
       "https://www.bois-colombes-echecs.com/wp-content/uploads/2025/09/PXL_20250831_151719117.MP_-1.jpg",
+    ],
   },
   {
     slug: "championnat-de-france-2025",
@@ -46,8 +50,9 @@ export const articles = [
     excerpt:
       "Émile Bassini remporte l'Open Accession Roger Ferry avec 7 points sur 9 rondes, lors du Championnat de France disputé à Vichy.",
     body: "Le Championnat de France d'échecs 2025 s'est déroulé à Vichy, au Palais des Congrès, sur 9 rondes à la cadence de 1h30 + 40 minutes avec 30 secondes d'incrément par coup.\n\nÉmile Bassini, entraîneur du club et Maître FIDE, y remporte l'Open Accession Roger Ferry avec 7 points sur 9, devant Peio Duboué (Échiquier de l'Erdre) et Simon Lamaze (Marseille-Échecs).",
-    image:
+    images: [
       "https://www.bois-colombes-echecs.com/wp-content/uploads/2026/06/54742104236_2d1978c3e0_o-1-scaled-e1780952812275.jpg",
+    ],
   },
 ];
 

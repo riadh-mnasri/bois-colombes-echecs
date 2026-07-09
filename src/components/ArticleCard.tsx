@@ -7,7 +7,7 @@ type Article = {
   title: string;
   date: string;
   excerpt: string;
-  image: string;
+  images: string[];
 };
 
 export function ArticleCard({ article }: { article: Article }) {
@@ -26,7 +26,7 @@ export function ArticleCard({ article }: { article: Article }) {
         <div className="relative aspect-[16/10] w-full overflow-hidden">
           <ViewTransition name={`article-photo-${article.slug}`}>
             <Image
-              src={article.image}
+              src={article.images[0]}
               alt={article.title}
               fill
               sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"

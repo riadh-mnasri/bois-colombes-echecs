@@ -38,7 +38,12 @@ export function Footer() {
       <div className="border-t border-line/70 py-6">
         <Container className="flex flex-col gap-2 text-xs text-ink-soft sm:flex-row sm:items-center sm:justify-between">
           <p>&copy; {new Date().getFullYear()} {club.name}</p>
-          <p>Club Formateur &middot; Zéro Tolérance</p>
+          <p className="flex items-center gap-4">
+            <span>Club Formateur &middot; Zéro Tolérance</span>
+            <Link href="/admin/login" className="hover:text-ink">
+              Administration
+            </Link>
+          </p>
         </Container>
       </div>
     </footer>

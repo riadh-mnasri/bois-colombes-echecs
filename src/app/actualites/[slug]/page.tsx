@@ -6,6 +6,7 @@ import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
 import { ArticleCard } from "@/components/ArticleCard";
 import { Reveal } from "@/components/Reveal";
+import { Gallery } from "@/components/Gallery";
 import { getAllArticles, getArticleBySlug } from "@/lib/articles";
 
 export async function generateMetadata(props: PageProps<"/actualites/[slug]">): Promise<Metadata> {
@@ -43,7 +44,7 @@ export default async function ArticlePage(props: PageProps<"/actualites/[slug]">
       <section className="relative h-[60vh] min-h-[420px] overflow-hidden text-paper">
         <ViewTransition name={`article-photo-${article.slug}`}>
           <Image
-            src={article.image}
+            src={article.images[0]}
             alt={article.title}
             fill
             priority
@@ -73,6 +74,13 @@ export default async function ArticlePage(props: PageProps<"/actualites/[slug]">
                 {paragraph}
               </p>
             ))}
+
+            {article.images.length > 1 && (
+              <div className="mt-10">
+                <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-wood">Photos</p>
+                <Gallery images={article.images} alt={article.title} />
+              </div>
+            )}
 
             <div className="mt-10">
               <Button href="/actualites" variant="outline-dark">

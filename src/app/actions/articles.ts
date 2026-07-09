@@ -29,22 +29,26 @@ export async function createArticle(
   const body = String(formData.get("body") ?? "")
     .trim()
     .replace(/\r\n/g, "\n");
-  const photo = formData.get("photo");
+  const photos = formData.getAll("photos").filter((p): p is File => p instanceof File && p.size > 0);
 
   if (!title || !date || !excerpt || !body) {
     return { error: "Tous les champs texte sont requis." };
   }
 
-  if (!(photo instanceof File) || photo.size === 0) {
-    return { error: "Une photo est requise." };
+  if (photos.length === 0) {
+    return { error: "Au moins une photo est requise." };
   }
 
   const db = getDb();
   const slug = slugify(title);
 
-  const blob = await put(`actualites/${Date.now()}-${slugify(photo.name)}`, photo, {
-    access: "public",
-  });
+  const blobs = await Promise.all(
+    photos.map((photo, i) =>
+      put(`actualites/${slug}/${Date.now()}-${i}-${slugify(photo.name)}`, photo, {
+        access: "public",
+      })
+    )
+  );
 
   await db.insert(articles).values({
     slug,
@@ -52,7 +56,7 @@ export async function createArticle(
     date,
     excerpt,
     body,
-    image: blob.url,
+    images: blobs.map((b) => b.url),
     authorId: session.userId,
   });
 
