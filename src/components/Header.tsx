@@ -2,16 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { Container } from "./Container";
 import { NewsletterModal } from "./NewsletterModal";
+import { NavLinks } from "./NavLinks";
 import logo from "../../public/brand/logo-cebc.png";
 import distingoLogo from "../../public/brand/distingo-bank.png";
-
-const links = [
-  { href: "/le-club", label: "Le Club" },
-  { href: "/actualites", label: "Actualités" },
-  { href: "/tournois-pizzas", label: "Tournois Pizzas" },
-  { href: "/nous-rejoindre", label: "Nous rejoindre" },
-  { href: "/contact", label: "Contact" },
-];
 
 export function Header() {
   return (
@@ -42,16 +35,8 @@ export function Header() {
             />
           </Link>
 
-          <nav className="hidden items-center gap-8 md:flex">
-            {links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium tracking-wide text-ink-soft transition-colors hover:text-ink"
-              >
-                {link.label}
-              </Link>
-            ))}
+          <nav className="hidden items-center gap-10 md:flex">
+            <NavLinks />
           </nav>
 
           <Link
@@ -68,11 +53,7 @@ export function Header() {
               </svg>
             </summary>
             <nav className="absolute left-0 right-0 top-24 flex flex-col gap-1 border-b border-line bg-paper p-4">
-              {links.map((link) => (
-                <Link key={link.href} href={link.href} className="rounded-lg px-3 py-2.5 text-ink-soft hover:bg-paper-dim">
-                  {link.label}
-                </Link>
-              ))}
+              <NavLinks mobile />
               <NewsletterModal className="rounded-lg px-3 py-2.5 text-left font-medium text-wood hover:bg-paper-dim" />
             </nav>
           </details>
