@@ -74,6 +74,18 @@ export default async function ArticlePage(props: PageProps<"/actualites/[slug]">
           <Reveal>
             <ArticleBody paragraphs={paragraphs} photos={article.images.slice(1)} alt={article.title} />
 
+            {article.resultsHtml && (
+              <div className="mt-10">
+                <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-wood">
+                  Résultats
+                </p>
+                <div
+                  className="overflow-x-auto rounded-xl border border-line [&_table]:w-full [&_table]:min-w-[560px] [&_table]:border-collapse [&_table+table]:mt-8 [&_td]:whitespace-nowrap [&_td]:border-b [&_td]:border-line [&_td]:px-3 [&_td]:py-2 [&_td]:text-sm [&_td]:text-ink-soft [&_th]:whitespace-nowrap [&_th]:bg-paper-dim [&_th]:px-3 [&_th]:py-2 [&_th]:text-left [&_th]:text-xs [&_th]:font-medium [&_th]:uppercase [&_th]:tracking-wide [&_th]:text-wood [&_tr:nth-child(even)]:bg-paper-dim/40"
+                  dangerouslySetInnerHTML={{ __html: article.resultsHtml }}
+                />
+              </div>
+            )}
+
             <div className="mt-10">
               <Button href="/actualites" variant="outline-dark">
                 &larr; Toutes les actualités

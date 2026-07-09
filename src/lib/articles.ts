@@ -9,6 +9,7 @@ export type Article = {
   excerpt: string;
   body: string;
   images: string[];
+  resultsHtml?: string | null;
 };
 
 export async function getAllArticles(): Promise<Article[]> {
@@ -24,6 +25,7 @@ export async function getAllArticles(): Promise<Article[]> {
       excerpt: a.excerpt,
       body: a.body,
       images: a.images,
+      resultsHtml: a.resultsHtml,
     })),
   ];
 
