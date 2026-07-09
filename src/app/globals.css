@@ -54,6 +54,27 @@ body {
   font-family: var(--font-sans);
 }
 
+::selection {
+  background: var(--color-gold);
+  color: #1b1712;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/></filter><rect width='240' height='240' filter='url(%23n)'/></svg>");
+}
+
+@media (prefers-color-scheme: dark) {
+  body::before {
+    opacity: 0.06;
+  }
+}
+
 .font-display {
   font-family: var(--font-display);
 }
@@ -81,8 +102,112 @@ body {
   color: var(--color-wood);
 }
 
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-rise {
+  opacity: 0;
+  animation: rise-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-rise-1 {
+  animation-delay: 0.1s;
+}
+
+.hero-rise-2 {
+  animation-delay: 0.25s;
+}
+
+.hero-rise-3 {
+  animation-delay: 0.4s;
+}
+
+.hero-rise-4 {
+  animation-delay: 0.55s;
+}
+
+@keyframes scroll-cue {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  45% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  55% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}
+
+.scroll-cue {
+  animation: scroll-cue 2.4s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee 45s linear infinite;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.btn-sheen {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-sheen::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -70%;
+  width: 45%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+}
+
+.btn-sheen:hover::after {
+  left: 130%;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .hero-photo {
+  .hero-photo,
+  .scroll-cue,
+  .marquee-track {
     animation: none;
+  }
+
+  .hero-rise {
+    animation: none;
+    opacity: 1;
+  }
+
+  .btn-sheen::after {
+    display: none;
   }
 }

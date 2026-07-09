@@ -6,9 +6,18 @@ import { ArticleCard } from "@/components/ArticleCard";
 import { Reveal } from "@/components/Reveal";
 import { PlayableBoard } from "@/components/PlayableBoard";
 import { CountUp } from "@/components/CountUp";
+import { Ornament } from "@/components/Ornament";
 import { stats, recentResults, orientations, club } from "@/lib/content";
 import { getAllArticles } from "@/lib/articles";
 import festivalPhoto from "../../public/photos/festival-jeunes.jpg";
+
+const distinctions = [
+  "22 titres de Champion(ne) de France Jeunes",
+  "Club Formateur FFE",
+  "Plus de 20 équipes engagées",
+  "De la Nationale 1 à la Nationale 5",
+  "Plus de 30 ans d'histoire",
+];
 
 export default async function HomePage() {
   const articles = await getAllArticles();
@@ -28,24 +37,43 @@ export default async function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-r from-forest-deep/70 via-forest-deep/20 to-transparent" />
 
         <Container className="relative py-28 sm:py-40">
-          <p className="mb-5 text-sm font-medium uppercase tracking-[0.25em] text-gold-soft">
+          <p className="hero-rise hero-rise-1 mb-5 flex items-center gap-3 text-sm font-medium uppercase tracking-[0.25em] text-gold-soft">
+            <span aria-hidden className="h-px w-8 bg-gold-soft" />
             Club Formateur FFE &middot; Bois-Colombes (92)
           </p>
-          <h1 className="max-w-3xl font-display text-4xl font-medium leading-[1.1] sm:text-6xl">
+          <h1 className="hero-rise hero-rise-2 max-w-3xl text-balance font-display text-4xl font-medium leading-[1.1] sm:text-6xl">
             Le jeu d&rsquo;échecs se joue et se transmet à Bois-Colombes{" "}
             <span className="font-display italic text-gold-soft">depuis plus de 30 ans</span>.
           </h1>
-          <p className="mt-6 max-w-xl text-lg text-paper/80">
+          <p className="hero-rise hero-rise-3 mt-6 max-w-xl text-lg text-paper/80">
             22 titres de Champion(ne) de France Jeunes, une école d&rsquo;échecs ouverte à tous les âges
             et une équipe d&rsquo;entraîneurs de haut niveau. Rejoignez le cercle.
           </p>
-          <div className="mt-10 flex flex-wrap gap-4">
+          <div className="hero-rise hero-rise-4 mt-10 flex flex-wrap gap-4">
             <Button href="/nous-rejoindre">Nous rejoindre</Button>
             <Button href="/le-club" variant="outline-light">
               Découvrir le club
             </Button>
           </div>
         </Container>
+
+        <div className="pointer-events-none absolute bottom-6 left-1/2 hidden -translate-x-1/2 sm:block">
+          <span className="scroll-cue block h-12 w-px bg-gold-soft/80" />
+        </div>
+      </section>
+
+      <section aria-hidden className="marquee overflow-hidden border-y border-paper/10 bg-forest-deep py-4 text-paper">
+        <div className="marquee-track flex w-max items-center gap-10">
+          {[...distinctions, ...distinctions].map((item, i) => (
+            <span
+              key={i}
+              className="flex items-center gap-10 whitespace-nowrap font-display text-lg italic text-gold-soft/90"
+            >
+              {item}
+              <span className="text-[0.5rem] not-italic text-gold/70">&#9670;</span>
+            </span>
+          ))}
+        </div>
       </section>
 
       <section className="bg-forest-deep py-10 text-center text-paper">
@@ -83,10 +111,10 @@ export default async function HomePage() {
 
       <section className="border-b border-line/70 bg-paper-dim">
         <Container className="py-12">
-          <Reveal className="grid grid-cols-2 gap-8 sm:grid-cols-4">
+          <Reveal className="grid grid-cols-2 gap-8 sm:grid-cols-4 sm:[&>*+*]:border-l sm:[&>*+*]:border-line sm:[&>*+*]:pl-8">
             {stats.map((stat) => (
               <div key={stat.label}>
-                <p className="font-display text-4xl font-medium text-wood">
+                <p className="font-display text-5xl font-medium text-wood">
                   <CountUp value={stat.value} />
                 </p>
                 <p className="mt-2 text-sm text-ink-soft">{stat.label}</p>
@@ -120,6 +148,7 @@ export default async function HomePage() {
 
       <section className="py-24">
         <Container>
+          <Ornament className="mb-16" />
           <Reveal>
             <SectionHeading
               eyebrow="Le club"

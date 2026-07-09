@@ -36,8 +36,13 @@ export function ArticleCard({ article }: { article: Article }) {
         </div>
         <div className="p-6">
           <p className="text-xs font-medium uppercase tracking-[0.15em] text-wood">{formattedDate}</p>
-          <h3 className="mt-2 font-display text-lg font-medium leading-snug">{article.title}</h3>
+          <h3 className="mt-2 font-display text-lg font-medium leading-snug transition-colors duration-300 group-hover:text-wood">
+            {article.title}
+          </h3>
           <p className="mt-3 text-sm leading-relaxed text-ink-soft">{article.excerpt}</p>
+          <p className="mt-4 inline-flex -translate-x-1 items-center gap-2 text-sm font-medium text-wood opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100">
+            Lire l&rsquo;article <span aria-hidden>&rarr;</span>
+          </p>
         </div>
       </article>
     </Link>
