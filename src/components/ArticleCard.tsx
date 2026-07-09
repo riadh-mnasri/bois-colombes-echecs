@@ -1,3 +1,4 @@
+import { ViewTransition } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -23,13 +24,15 @@ export function ArticleCard({ article }: { article: Article }) {
     >
       <article>
         <div className="relative aspect-[16/10] w-full overflow-hidden">
-          <Image
-            src={article.image}
-            alt={article.title}
-            fill
-            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-          />
+          <ViewTransition name={`article-photo-${article.slug}`}>
+            <Image
+              src={article.image}
+              alt={article.title}
+              fill
+              sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+          </ViewTransition>
         </div>
         <div className="p-6">
           <p className="text-xs font-medium uppercase tracking-[0.15em] text-wood">{formattedDate}</p>

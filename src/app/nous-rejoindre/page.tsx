@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
 import { SectionHeading } from "@/components/SectionHeading";
+import { Reveal } from "@/components/Reveal";
 import {
   youthCategories,
   youthPricing,
@@ -26,7 +27,7 @@ export default function NousRejoindrePage() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[center_68%]"
+          className="hero-photo object-cover object-[center_68%]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-forest-deep/85 to-forest-deep/55" />
         <Container className="relative py-20">
@@ -43,6 +44,7 @@ export default function NousRejoindrePage() {
 
       <section className="py-20">
         <Container>
+          <Reveal>
           <SectionHeading eyebrow="Jeunes" title="Adhésion jeunes — saison en cours" />
 
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
@@ -82,11 +84,13 @@ export default function NousRejoindrePage() {
               S&rsquo;inscrire — Adhésion jeunes 2026/2027
             </Button>
           </div>
+          </Reveal>
         </Container>
       </section>
 
       <section className="bg-paper-dim py-20">
         <Container>
+          <Reveal>
           <SectionHeading eyebrow="Adultes" title="Adhésion adultes — saison en cours" />
 
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
@@ -124,11 +128,13 @@ export default function NousRejoindrePage() {
               S&rsquo;inscrire — Adhésion adultes 2026/2027
             </Button>
           </div>
+          </Reveal>
         </Container>
       </section>
 
       <section className="py-20">
-        <Container className="grid gap-10 lg:grid-cols-2">
+        <Container>
+        <Reveal className="grid gap-10 lg:grid-cols-2">
           <div>
             <SectionHeading eyebrow="Ce qui est inclus" title="Une adhésion complète" />
             <ul className="mt-8 space-y-3 text-sm text-ink-soft">
@@ -153,6 +159,7 @@ export default function NousRejoindrePage() {
               </Button>
             </div>
           </div>
+        </Reveal>
         </Container>
       </section>
     </>
