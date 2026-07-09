@@ -5,6 +5,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
 import { orientations, recentResults, historicalPalmares, trainers, board } from "@/lib/content";
 import podiumPhoto from "../../../public/photos/championnat-de-france.jpg";
+import boardPhoto from "../../../public/photos/hauts-de-seine-podium.jpg";
 
 export const metadata: Metadata = {
   title: "Le Club · Cercle d'Échecs de Bois-Colombes",
@@ -37,12 +38,15 @@ export default function LeClubPage() {
           <Reveal>
             <SectionHeading eyebrow="Nos orientations" title="Cinq axes de développement" />
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {orientations.map((item) => (
+              {orientations.map((item, i) => (
                 <div
                   key={item.title}
                   className="rounded-2xl border border-line p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-lg"
                 >
-                  <h3 className="font-display text-xl font-medium">{item.title}</h3>
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-forest font-display text-sm font-medium text-gold-soft">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="mt-4 font-display text-xl font-medium">{item.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-ink-soft">{item.description}</p>
                 </div>
               ))}
@@ -74,13 +78,17 @@ export default function LeClubPage() {
                 </div>
               ))}
             </div>
-            <div className="mt-10 rounded-2xl border border-line bg-paper p-6">
+
+            <div className="mt-10 rounded-2xl border border-line bg-paper p-8">
               <h3 className="font-display text-xl font-medium">Palmarès historique</h3>
-              <ul className="mt-4 grid gap-2 text-sm text-ink-soft sm:grid-cols-2">
+              <ol className="mt-6 border-l border-line pl-6">
                 {historicalPalmares.map((line) => (
-                  <li key={line}>{line}</li>
+                  <li key={line} className="relative pb-6 text-sm text-ink-soft last:pb-0">
+                    <span className="absolute -left-[27px] top-1 h-3 w-3 rounded-full border-2 border-gold bg-paper" />
+                    {line}
+                  </li>
                 ))}
-              </ul>
+              </ol>
             </div>
           </Reveal>
         </Container>
@@ -96,9 +104,22 @@ export default function LeClubPage() {
                   key={trainer.name}
                   className="rounded-2xl border border-line p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-lg"
                 >
-                  <h3 className="font-display text-lg font-medium">{trainer.name}</h3>
-                  <p className="mt-1 text-sm font-medium text-wood">{trainer.role}</p>
-                  <p className="mt-3 text-sm leading-relaxed text-ink-soft">{trainer.bio}</p>
+                  <div className="flex items-center gap-4">
+                    <div className="relative h-14 w-14 flex-none overflow-hidden rounded-full ring-2 ring-gold/40">
+                      <Image
+                        src={trainer.photo}
+                        alt={trainer.name}
+                        fill
+                        sizes="56px"
+                        className="object-cover"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="font-display text-lg font-medium leading-tight">{trainer.name}</h3>
+                      <p className="text-sm font-medium text-wood">{trainer.role}</p>
+                    </div>
+                  </div>
+                  <p className="mt-4 text-sm leading-relaxed text-ink-soft">{trainer.bio}</p>
                 </div>
               ))}
             </div>
@@ -106,8 +127,16 @@ export default function LeClubPage() {
         </Container>
       </section>
 
-      <section className="bg-forest py-20 text-paper">
-        <Container>
+      <section className="relative overflow-hidden text-paper">
+        <Image
+          src={boardPhoto}
+          alt="Remise des trophées du Championnat des Hauts-de-Seine"
+          fill
+          sizes="100vw"
+          className="object-cover object-top"
+        />
+        <div className="absolute inset-0 bg-forest-deep/85" />
+        <Container className="relative py-20">
           <Reveal>
             <SectionHeading light eyebrow="Bureau directeur" title="L'équipe qui fait vivre le club" />
             <ul className="mt-10 grid gap-4 sm:grid-cols-2">

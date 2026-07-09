@@ -138,31 +138,37 @@ export const trainers = [
     name: "Pascal Chomet",
     role: "Maître International, DEFFE 1er degré",
     bio: "Entraîneur depuis 1992, élu entraîneur de l'année en 2001. A formé plusieurs champions dont Marie Sebag et Pauline Guichard.",
+    photo: "/photos/team/pascal-chomet.jpg",
   },
   {
     name: "Stéphane Pinçon",
     role: "Diplôme d'Animateur, DAFFE 1er degré",
     bio: "Responsable de l'école d'échecs depuis 2007. Supervise le Bois-Colombes Chess Master et le Festival Jeunes IDF. Préside la Commission Jeunes de la ligue.",
+    photo: "/photos/team/stephane-pincon.jpg",
   },
   {
     name: "Émile Bassini",
     role: "Maître FIDE",
     bio: "Champion de France U14 en 2018. Ancien capitaine et entraîneur de l'équipe 1 de Nationale 1, montée en Top 16.",
+    photo: "/photos/team/emile-bassini.jpg",
   },
   {
     name: "Augustin Droin",
     role: "Maître International",
     bio: "Vice-champion du monde 2023 U16, il rejoint l'équipe d'entraînement du club.",
+    photo: "/photos/team/augustin-droin.jpg",
   },
   {
     name: "Maia Arzur",
     role: "Membre de l'équipe de France Élite",
     bio: "Championne de France U14F en 2022, elle accompagne les jeunes joueuses du club.",
+    photo: "/photos/team/maia-arzur.jpeg",
   },
   {
     name: "Mathias Robert",
     role: "Entraîneur",
     bio: "Entraîneur depuis 2024, coéquipier historique du club pendant dix ans.",
+    photo: "/photos/team/mathias-robert.jpg",
   },
 ];
 

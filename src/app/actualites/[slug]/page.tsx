@@ -6,7 +6,7 @@ import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
 import { ArticleCard } from "@/components/ArticleCard";
 import { Reveal } from "@/components/Reveal";
-import { Gallery } from "@/components/Gallery";
+import { ArticleBody } from "@/components/ArticleBody";
 import { getAllArticles, getArticleBySlug } from "@/lib/articles";
 
 export async function generateMetadata(props: PageProps<"/actualites/[slug]">): Promise<Metadata> {
@@ -66,21 +66,7 @@ export default async function ArticlePage(props: PageProps<"/actualites/[slug]">
       <section className="py-16">
         <Container className="max-w-2xl">
           <Reveal>
-            {paragraphs.map((paragraph, i) => (
-              <p
-                key={i}
-                className={`mb-5 text-lg leading-relaxed text-ink-soft ${i === 0 ? "drop-cap" : ""}`}
-              >
-                {paragraph}
-              </p>
-            ))}
-
-            {article.images.length > 1 && (
-              <div className="mt-10">
-                <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-wood">Photos</p>
-                <Gallery images={article.images} alt={article.title} />
-              </div>
-            )}
+            <ArticleBody paragraphs={paragraphs} photos={article.images.slice(1)} alt={article.title} />
 
             <div className="mt-10">
               <Button href="/actualites" variant="outline-dark">

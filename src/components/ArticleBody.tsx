@@ -3,7 +3,15 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-export function Gallery({ images, alt }: { images: string[]; alt: string }) {
+export function ArticleBody({
+  paragraphs,
+  photos,
+  alt,
+}: {
+  paragraphs: string[];
+  photos: string[];
+  alt: string;
+}) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   useEffect(() => {
@@ -11,9 +19,9 @@ export function Gallery({ images, alt }: { images: string[]; alt: string }) {
 
     function handleKey(e: KeyboardEvent) {
       if (e.key === "Escape") setOpenIndex(null);
-      if (e.key === "ArrowRight") setOpenIndex((i) => (i === null ? i : (i + 1) % images.length));
+      if (e.key === "ArrowRight") setOpenIndex((i) => (i === null ? i : (i + 1) % photos.length));
       if (e.key === "ArrowLeft")
-        setOpenIndex((i) => (i === null ? i : (i - 1 + images.length) % images.length));
+        setOpenIndex((i) => (i === null ? i : (i - 1 + photos.length) % photos.length));
     }
 
     document.addEventListener("keydown", handleKey);
@@ -22,30 +30,46 @@ export function Gallery({ images, alt }: { images: string[]; alt: string }) {
       document.removeEventListener("keydown", handleKey);
       document.body.style.overflow = "";
     };
-  }, [openIndex, images.length]);
+  }, [openIndex, photos.length]);
 
-  if (images.length < 2) return null;
+  const blocks: React.ReactNode[] = [];
+  const maxLength = Math.max(paragraphs.length, photos.length);
+
+  for (let i = 0; i < maxLength; i++) {
+    if (paragraphs[i]) {
+      blocks.push(
+        <p
+          key={`p-${i}`}
+          className={`mb-6 text-lg leading-relaxed text-ink-soft ${i === 0 ? "drop-cap" : ""}`}
+        >
+          {paragraphs[i]}
+        </p>
+      );
+    }
+
+    if (photos[i]) {
+      blocks.push(
+        <button
+          key={`img-${i}`}
+          type="button"
+          onClick={() => setOpenIndex(i)}
+          className="group relative mb-8 block aspect-[3/2] w-full cursor-zoom-in overflow-hidden rounded-2xl border border-line"
+        >
+          <Image
+            src={photos[i]}
+            alt={`${alt}, photo ${i + 2}`}
+            fill
+            sizes="(min-width: 768px) 700px, 100vw"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </button>
+      );
+    }
+  }
 
   return (
     <>
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-        {images.map((src, i) => (
-          <button
-            key={src}
-            type="button"
-            onClick={() => setOpenIndex(i)}
-            className="group relative aspect-square overflow-hidden rounded-xl border border-line"
-          >
-            <Image
-              src={src}
-              alt={`${alt}, photo ${i + 1}`}
-              fill
-              sizes="(min-width: 640px) 25vw, 50vw"
-              className="object-cover transition-transform duration-300 group-hover:scale-105"
-            />
-          </button>
-        ))}
-      </div>
+      {blocks}
 
       {openIndex !== null && (
         <div
@@ -61,14 +85,14 @@ export function Gallery({ images, alt }: { images: string[]; alt: string }) {
             &times;
           </button>
 
-          {images.length > 1 && (
+          {photos.length > 1 && (
             <>
               <button
                 type="button"
                 aria-label="Photo précédente"
                 onClick={(e) => {
                   e.stopPropagation();
-                  setOpenIndex((i) => (i === null ? i : (i - 1 + images.length) % images.length));
+                  setOpenIndex((i) => (i === null ? i : (i - 1 + photos.length) % photos.length));
                 }}
                 className="absolute left-4 text-4xl text-paper/70 hover:text-paper sm:left-8"
               >
@@ -79,7 +103,7 @@ export function Gallery({ images, alt }: { images: string[]; alt: string }) {
                 aria-label="Photo suivante"
                 onClick={(e) => {
                   e.stopPropagation();
-                  setOpenIndex((i) => (i === null ? i : (i + 1) % images.length));
+                  setOpenIndex((i) => (i === null ? i : (i + 1) % photos.length));
                 }}
                 className="absolute right-4 text-4xl text-paper/70 hover:text-paper sm:right-8"
               >
@@ -88,13 +112,10 @@ export function Gallery({ images, alt }: { images: string[]; alt: string }) {
             </>
           )}
 
-          <div
-            className="relative h-[80vh] w-full max-w-4xl"
-            onClick={(e) => e.stopPropagation()}
-          >
+          <div className="relative h-[80vh] w-full max-w-4xl" onClick={(e) => e.stopPropagation()}>
             <Image
-              src={images[openIndex]}
-              alt={`${alt}, photo ${openIndex + 1}`}
+              src={photos[openIndex]}
+              alt={`${alt}, photo ${openIndex + 2}`}
               fill
               sizes="100vw"
               className="object-contain"
