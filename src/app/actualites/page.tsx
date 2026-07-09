@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/Container";
 import { ArticleCard } from "@/components/ArticleCard";
-import { articles } from "@/lib/content";
+import { getAllArticles } from "@/lib/articles";
 
 export const metadata: Metadata = {
   title: "Actualités — Cercle d'Échecs de Bois-Colombes",
   description: "Tournois, championnats et résultats récents du Cercle d'Échecs de Bois-Colombes.",
 };
 
-export default function ActualitesPage() {
+export default async function ActualitesPage() {
+  const articles = await getAllArticles();
+
   return (
     <>
       <section className="bg-forest-deep py-20 text-paper">

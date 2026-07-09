@@ -3,10 +3,13 @@ import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ArticleCard } from "@/components/ArticleCard";
-import { stats, recentResults, orientations, club, articles } from "@/lib/content";
+import { stats, recentResults, orientations, club } from "@/lib/content";
+import { getAllArticles } from "@/lib/articles";
 import festivalPhoto from "../../public/photos/festival-jeunes.jpg";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const articles = await getAllArticles();
+
   return (
     <>
       <section className="relative overflow-hidden text-paper">
