@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { club } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Contact — Cercle d'Échecs de Bois-Colombes",
+  title: "Contact · Cercle d'Échecs de Bois-Colombes",
   description: "Adresse, téléphone, email et formulaire de contact du Cercle d'Échecs de Bois-Colombes.",
 };
 

@@ -4,6 +4,8 @@ import { Button } from "@/components/Button";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ArticleCard } from "@/components/ArticleCard";
 import { Reveal } from "@/components/Reveal";
+import { PlayableBoard } from "@/components/PlayableBoard";
+import { CountUp } from "@/components/CountUp";
 import { stats, recentResults, orientations, club } from "@/lib/content";
 import { getAllArticles } from "@/lib/articles";
 import festivalPhoto from "../../public/photos/festival-jeunes.jpg";
@@ -55,12 +57,38 @@ export default async function HomePage() {
         </Container>
       </section>
 
+      <section className="bg-forest py-24 text-paper">
+        <Container>
+          <Reveal className="grid items-center gap-12 lg:grid-cols-[minmax(0,420px)_1fr]">
+            <PlayableBoard />
+            <div>
+              <p className="mb-4 text-sm font-medium uppercase tracking-[0.25em] text-gold-soft">
+                À vous de jouer
+              </p>
+              <h2 className="font-display text-3xl font-medium sm:text-4xl">
+                Un échiquier, deux joueurs, une seule règle : venez comme vous êtes.
+              </h2>
+              <p className="mt-4 max-w-md text-paper/75">
+                Déplacez les pièces directement sur cet échiquier : les règles du jeu sont
+                respectées, échec et mat compris. C&rsquo;est exactement l&rsquo;esprit du club :
+                on apprend en jouant, quel que soit son niveau.
+              </p>
+              <div className="mt-8">
+                <Button href="/nous-rejoindre">Venir jouer au club</Button>
+              </div>
+            </div>
+          </Reveal>
+        </Container>
+      </section>
+
       <section className="border-b border-line/70 bg-paper-dim">
         <Container className="py-12">
           <Reveal className="grid grid-cols-2 gap-8 sm:grid-cols-4">
             {stats.map((stat) => (
               <div key={stat.label}>
-                <p className="font-display text-4xl font-medium text-wood">{stat.value}</p>
+                <p className="font-display text-4xl font-medium text-wood">
+                  <CountUp value={stat.value} />
+                </p>
                 <p className="mt-2 text-sm text-ink-soft">{stat.label}</p>
               </div>
             ))}

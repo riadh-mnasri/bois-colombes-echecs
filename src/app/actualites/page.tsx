@@ -4,7 +4,7 @@ import { ArticleCard } from "@/components/ArticleCard";
 import { getAllArticles } from "@/lib/articles";
 
 export const metadata: Metadata = {
-  title: "Actualités — Cercle d'Échecs de Bois-Colombes",
+  title: "Actualités · Cercle d'Échecs de Bois-Colombes",
   description: "Tournois, championnats et résultats récents du Cercle d'Échecs de Bois-Colombes.",
 };
 

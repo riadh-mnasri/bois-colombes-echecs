@@ -13,7 +13,7 @@ import {
 import teamPhoto from "../../../public/photos/top-jeunes-equipe.jpg";
 
 export const metadata: Metadata = {
-  title: "Nous rejoindre — Cercle d'Échecs de Bois-Colombes",
+  title: "Nous rejoindre · Cercle d'Échecs de Bois-Colombes",
   description: "Tarifs et modalités d'adhésion, jeunes et adultes, au Cercle d'Échecs de Bois-Colombes.",
 };
 
@@ -45,7 +45,7 @@ export default function NousRejoindrePage() {
       <section className="py-20">
         <Container>
           <Reveal>
-          <SectionHeading eyebrow="Jeunes" title="Adhésion jeunes — saison en cours" />
+          <SectionHeading eyebrow="Jeunes" title="Adhésion jeunes, saison en cours" />
 
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
             <div className="rounded-2xl border border-line p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-lg">
@@ -81,7 +81,7 @@ export default function NousRejoindrePage() {
 
           <div className="mt-6">
             <Button href={youthPricing.registrationUrl} external>
-              S&rsquo;inscrire — Adhésion jeunes 2026/2027
+              S&rsquo;inscrire à l&rsquo;adhésion jeunes 2026/2027
             </Button>
           </div>
           </Reveal>
@@ -91,7 +91,7 @@ export default function NousRejoindrePage() {
       <section className="bg-paper-dim py-20">
         <Container>
           <Reveal>
-          <SectionHeading eyebrow="Adultes" title="Adhésion adultes — saison en cours" />
+          <SectionHeading eyebrow="Adultes" title="Adhésion adultes, saison en cours" />
 
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
             <div className="rounded-2xl border border-line bg-paper p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-lg">
@@ -125,7 +125,7 @@ export default function NousRejoindrePage() {
 
           <div className="mt-6">
             <Button href={adultPricing.registrationUrl} external>
-              S&rsquo;inscrire — Adhésion adultes 2026/2027
+              S&rsquo;inscrire à l&rsquo;adhésion adultes 2026/2027
             </Button>
           </div>
           </Reveal>

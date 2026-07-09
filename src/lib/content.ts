@@ -1,7 +1,7 @@
 export const articles = [
   {
     slug: "top-jeunes-saison-2025-2026",
-    title: "Top Jeunes — Saison 2025-2026 : vice-champions de France",
+    title: "Top Jeunes, saison 2025-2026 : vice-champions de France",
     date: "2026-06-04",
     excerpt:
       "En Top Jeunes, la plus haute division nationale, l'équipe du club termine vice-championne de France, 2e sur 8 équipes. Bravo à Iskander, Joshua, Adhyayan, Charles, Mathias, Vaishak, Leo, Sakithyan et Gurvann.",
@@ -34,7 +34,7 @@ export const articles = [
   },
   {
     slug: "festival-jeunes-idf-etape-1-bois-colombes-2025",
-    title: "Festival Jeunes IdF — Étape 1 à Bois-Colombes",
+    title: "Festival Jeunes IdF, étape 1 à Bois-Colombes",
     date: "2025-09-25",
     excerpt:
       "Le club organise la 1ère étape du Festival Jeunes IdF le 31 août 2025 : un open en 9 rondes, un challenge jeunes pour les débutants et un tournoi accompagnateurs.",
@@ -126,9 +126,9 @@ export const recentResults = [
 ];
 
 export const historicalPalmares = [
-  "Marie Sebag — championne d'Europe U12F (1998) et U14F (1999)",
-  "Fanny Gaudron — championne de France U12F puis U14F (1993–1995)",
-  "Mathilde Choisy — championne de France U20F (2007–2008)",
+  "Marie Sebag, championne d'Europe U12F (1998) et U14F (1999)",
+  "Fanny Gaudron, championne de France U12F puis U14F (1993–1995)",
+  "Mathilde Choisy, championne de France U20F (2007–2008)",
   "Trophée royal du meilleur club jeunes (1994)",
   "Trophée du meilleur club jeunes de France (1999)",
 ];
@@ -136,12 +136,12 @@ export const historicalPalmares = [
 export const trainers = [
   {
     name: "Pascal Chomet",
-    role: "Maître International — DEFFE 1er degré",
+    role: "Maître International, DEFFE 1er degré",
     bio: "Entraîneur depuis 1992, élu entraîneur de l'année en 2001. A formé plusieurs champions dont Marie Sebag et Pauline Guichard.",
   },
   {
     name: "Stéphane Pinçon",
-    role: "Diplôme d'Animateur — DAFFE 1er degré",
+    role: "Diplôme d'Animateur, DAFFE 1er degré",
     bio: "Responsable de l'école d'échecs depuis 2007. Supervise le Bois-Colombes Chess Master et le Festival Jeunes IDF. Préside la Commission Jeunes de la ligue.",
   },
   {
@@ -189,11 +189,11 @@ export const youthPricing = {
   nonLocal: "250 €",
   note: "Réduction de 50 % sur la cotisation à partir du 3ᵉ membre d'une même famille.",
   schedule: [
-    "Mercredi et samedi — Petit-poussin : 9h30–10h30",
-    "Mercredi et samedi — Poussin : 10h30–12h00",
-    "Mercredi et samedi — Pupille : 13h30–15h30",
-    "Mercredi et samedi — Benjamin et +  : 15h30–17h30",
-    "Tournois Pizzas — environ 7 vendredis soir dans la saison",
+    "Mercredi et samedi, Petit-poussin : 9h30–10h30",
+    "Mercredi et samedi, Poussin : 10h30–12h00",
+    "Mercredi et samedi, Pupille : 13h30–15h30",
+    "Mercredi et samedi, Benjamin et + : 15h30–17h30",
+    "Tournois Pizzas, environ 7 vendredis soir dans la saison",
   ],
   registrationUrl:
     "https://www.billetweb.fr/shop.php?event=adhesions-jeunes-2026-2027-cercle-dechecs-de-bois-colombes",
@@ -204,10 +204,10 @@ export const adultPricing = {
   veteran: { local: "165 €", nonLocal: "195 €", note: "nés en 1966 ou avant" },
   note: "Réduction de 50 % sur la cotisation à partir du 3ᵉ membre d'une même famille.",
   schedule: [
-    "Mardi 20h30–22h30 — Cours perfectionnement (1700 Elo et +)",
-    "Mercredi 21h00–23h30 — Entraînement d'équipe",
-    "Jeudi 20h30–22h40 — Cours débutants / intermédiaires",
-    "Mercredi et vendredi — Parties libres",
+    "Mardi 20h30–22h30, cours perfectionnement (1700 Elo et +)",
+    "Mercredi 21h00–23h30, entraînement d'équipe",
+    "Jeudi 20h30–22h40, cours débutants / intermédiaires",
+    "Mercredi et vendredi, parties libres",
   ],
   registrationUrl:
     "https://www.billetweb.fr/shop.php?event=adhesions-adultes-2026-2027-cercle-dechecs-de-bois-colombes",

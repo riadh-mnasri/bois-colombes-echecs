@@ -4,7 +4,7 @@ import { verifySession } from "@/lib/dal";
 import { NewUserForm } from "./NewUserForm";
 
 export const metadata: Metadata = {
-  title: "Ajouter un utilisateur — Administration",
+  title: "Ajouter un utilisateur · Administration",
   robots: { index: false, follow: false },
 };
 

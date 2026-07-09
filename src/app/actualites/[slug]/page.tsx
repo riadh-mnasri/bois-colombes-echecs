@@ -16,7 +16,7 @@ export async function generateMetadata(props: PageProps<"/actualites/[slug]">): 
   if (!article) return {};
 
   return {
-    title: `${article.title} — Cercle d'Échecs de Bois-Colombes`,
+    title: `${article.title} · Cercle d'Échecs de Bois-Colombes`,
     description: article.excerpt,
   };
 }

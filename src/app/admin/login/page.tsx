@@ -3,7 +3,7 @@ import { Container } from "@/components/Container";
 import { LoginForm } from "./LoginForm";
 
 export const metadata: Metadata = {
-  title: "Connexion administrateur — Cercle d'Échecs de Bois-Colombes",
+  title: "Connexion administrateur · Cercle d'Échecs de Bois-Colombes",
   robots: { index: false, follow: false },
 };
 

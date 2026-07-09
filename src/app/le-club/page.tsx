@@ -7,7 +7,7 @@ import { orientations, recentResults, historicalPalmares, trainers, board } from
 import podiumPhoto from "../../../public/photos/championnat-de-france.jpg";
 
 export const metadata: Metadata = {
-  title: "Le Club — Cercle d'Échecs de Bois-Colombes",
+  title: "Le Club · Cercle d'Échecs de Bois-Colombes",
   description: "Histoire, valeurs, palmarès et équipe encadrante du Cercle d'Échecs de Bois-Colombes.",
 };
 

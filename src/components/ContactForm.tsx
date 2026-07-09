@@ -13,8 +13,8 @@ export function ContactForm() {
     const email = String(data.get("email") ?? "");
     const message = String(data.get("message") ?? "");
 
-    const subject = encodeURIComponent(`Contact site — ${name}`);
-    const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
+    const subject = encodeURIComponent(`Contact site : ${name}`);
+    const body = encodeURIComponent(`${message}\n\n${name} (${email})`);
     window.location.href = `mailto:${club.email}?subject=${subject}&body=${body}`;
     setSent(true);
   }

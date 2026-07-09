@@ -5,7 +5,7 @@ import { verifySession } from "@/lib/dal";
 import { getAllArticles } from "@/lib/articles";
 
 export const metadata: Metadata = {
-  title: "Administration — Actualités",
+  title: "Administration · Actualités",
   robots: { index: false, follow: false },
 };
 

@@ -38,7 +38,7 @@ export function Gallery({ images, alt }: { images: string[]; alt: string }) {
           >
             <Image
               src={src}
-              alt={`${alt} — photo ${i + 1}`}
+              alt={`${alt}, photo ${i + 1}`}
               fill
               sizes="(min-width: 640px) 25vw, 50vw"
               className="object-cover transition-transform duration-300 group-hover:scale-105"
@@ -94,7 +94,7 @@ export function Gallery({ images, alt }: { images: string[]; alt: string }) {
           >
             <Image
               src={images[openIndex]}
-              alt={`${alt} — photo ${openIndex + 1}`}
+              alt={`${alt}, photo ${openIndex + 1}`}
               fill
               sizes="100vw"
               className="object-contain"

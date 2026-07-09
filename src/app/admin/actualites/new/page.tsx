@@ -4,7 +4,7 @@ import { verifySession } from "@/lib/dal";
 import { NewArticleForm } from "./NewArticleForm";
 
 export const metadata: Metadata = {
-  title: "Nouvelle actualité — Administration",
+  title: "Nouvelle actualité · Administration",
   robots: { index: false, follow: false },
 };
 
