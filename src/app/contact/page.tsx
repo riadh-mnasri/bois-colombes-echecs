@@ -14,8 +14,8 @@ export default function ContactPage() {
     <>
       <section className="bg-forest-deep py-20 text-paper">
         <Container>
-          <p className="mb-4 text-sm font-medium uppercase tracking-[0.25em] text-gold-soft">Contact</p>
-          <h1 className="max-w-2xl font-display text-4xl font-medium sm:text-5xl">
+          <p className="hero-rise hero-rise-1 mb-4 flex items-center gap-3 text-sm font-medium uppercase tracking-[0.25em] text-gold-soft"><span aria-hidden className="h-px w-8 bg-gold-soft" />Contact</p>
+          <h1 className="hero-rise hero-rise-2 max-w-2xl text-balance font-display text-4xl font-medium sm:text-5xl">
             Une question ? Le club vous répond.
           </h1>
         </Container>

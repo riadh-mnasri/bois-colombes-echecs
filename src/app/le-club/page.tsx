@@ -3,7 +3,8 @@ import Image from "next/image";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
-import { orientations, recentResults, historicalPalmares, trainers, board } from "@/lib/content";
+import { CountUp } from "@/components/CountUp";
+import { stats, orientations, recentResults, historicalPalmares, trainers, board } from "@/lib/content";
 import podiumPhoto from "../../../public/photos/championnat-de-france.jpg";
 import boardPhoto from "../../../public/photos/hauts-de-seine-podium.jpg";
 
@@ -26,10 +27,33 @@ export default function LeClubPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-forest-deep/80 to-forest-deep/50" />
         <Container className="relative py-20">
-          <p className="mb-4 text-sm font-medium uppercase tracking-[0.25em] text-gold-soft">Le Club</p>
-          <h1 className="max-w-2xl font-display text-4xl font-medium sm:text-5xl">
+          <p className="hero-rise hero-rise-1 mb-4 flex items-center gap-3 text-sm font-medium uppercase tracking-[0.25em] text-gold-soft"><span aria-hidden className="h-px w-8 bg-gold-soft" />Le Club</p>
+          <h1 className="hero-rise hero-rise-2 max-w-2xl text-balance font-display text-4xl font-medium sm:text-5xl">
             Développer la pratique du jeu d&rsquo;échecs, en éduquant, formant, responsabilisant.
           </h1>
+        </Container>
+      </section>
+
+      <section className="border-b border-line/70 py-24 sm:py-28">
+        <Container>
+          <Reveal>
+            <p className="flex items-center gap-3 text-sm font-medium uppercase tracking-[0.2em] text-wood">
+              <span aria-hidden className="h-px w-8 bg-gold" />
+              Le club en chiffres
+            </p>
+            <div className="mt-14 grid gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-4 lg:[&>*+*]:border-l lg:[&>*+*]:border-line lg:[&>*+*]:pl-10">
+              {stats.map((stat) => (
+                <div key={stat.label}>
+                  <p className="font-display text-7xl font-medium leading-none tracking-tight text-wood sm:text-8xl">
+                    <CountUp value={stat.value} />
+                  </p>
+                  <p className="mt-5 max-w-[18ch] text-sm leading-relaxed text-ink-soft">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </Reveal>
         </Container>
       </section>
 

@@ -31,8 +31,8 @@ export default function NousRejoindrePage() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-forest-deep/85 to-forest-deep/55" />
         <Container className="relative py-20">
-          <p className="mb-4 text-sm font-medium uppercase tracking-[0.25em] text-gold-soft">Nous rejoindre</p>
-          <h1 className="max-w-2xl font-display text-4xl font-medium sm:text-5xl">
+          <p className="hero-rise hero-rise-1 mb-4 flex items-center gap-3 text-sm font-medium uppercase tracking-[0.25em] text-gold-soft"><span aria-hidden className="h-px w-8 bg-gold-soft" />Nous rejoindre</p>
+          <h1 className="hero-rise hero-rise-2 max-w-2xl text-balance font-display text-4xl font-medium sm:text-5xl">
             Une place vous attend, quel que soit votre âge ou votre niveau.
           </h1>
           <p className="mt-6 max-w-xl text-paper/80">

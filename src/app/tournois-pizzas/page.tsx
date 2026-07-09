@@ -19,10 +19,10 @@ export default async function TournoisPizzasPage() {
     <>
       <section className="bg-forest-deep py-20 text-paper">
         <Container>
-          <p className="mb-4 text-sm font-medium uppercase tracking-[0.25em] text-gold-soft">
+          <p className="hero-rise hero-rise-1 mb-4 flex items-center gap-3 text-sm font-medium uppercase tracking-[0.25em] text-gold-soft"><span aria-hidden className="h-px w-8 bg-gold-soft" />
             Tournois Pizzas
           </p>
-          <h1 className="max-w-2xl font-display text-4xl font-medium sm:text-5xl">
+          <h1 className="hero-rise hero-rise-2 max-w-2xl text-balance font-display text-4xl font-medium sm:text-5xl">
             Des vendredis soir conviviaux, entre passionnés de tous niveaux.
           </h1>
         </Container>
