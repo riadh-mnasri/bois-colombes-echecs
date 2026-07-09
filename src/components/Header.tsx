@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Container } from "./Container";
+import { NewsletterModal } from "./NewsletterModal";
 import logo from "../../public/brand/logo-cebc.png";
 import distingoLogo from "../../public/brand/distingo-bank.png";
 
@@ -16,10 +17,17 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-paper/90 backdrop-blur">
       <div className="hidden border-b border-line/70 bg-forest-deep sm:block">
-        <Container className="flex h-9 items-center justify-center gap-2 text-xs text-paper/85">
-          <span>Distingo Bank, partenaire du club</span>
-          <span className="text-paper/40">&middot;</span>
-          <Image src={distingoLogo} alt="Distingo Bank" className="h-5 w-auto rounded bg-paper px-1.5 py-0.5" />
+        <Container className="flex h-9 items-center justify-between text-xs text-paper/85">
+          <NewsletterModal className="font-medium text-gold-soft hover:text-paper" />
+          <div className="flex items-center gap-2">
+            <span>Distingo Bank, partenaire du club</span>
+            <span className="text-paper/40">&middot;</span>
+            <Image
+              src={distingoLogo}
+              alt="Distingo Bank"
+              className="h-5 w-auto rounded bg-paper px-1.5 py-0.5"
+            />
+          </div>
         </Container>
       </div>
 
@@ -65,6 +73,7 @@ export function Header() {
                   {link.label}
                 </Link>
               ))}
+              <NewsletterModal className="rounded-lg px-3 py-2.5 text-left font-medium text-wood hover:bg-paper-dim" />
             </nav>
           </details>
         </Container>

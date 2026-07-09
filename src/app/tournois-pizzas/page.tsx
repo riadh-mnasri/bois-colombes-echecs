@@ -3,14 +3,18 @@ import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
+import { ArticleCard } from "@/components/ArticleCard";
 import { tournoisPizzas, club } from "@/lib/content";
+import { getPizzaTournamentArticles } from "@/lib/articles";
 
 export const metadata: Metadata = {
   title: "Tournois Pizzas · Cercle d'Échecs de Bois-Colombes",
   description: "Les tournois pizzas du Cercle d'Échecs de Bois-Colombes : format, dates et inscription.",
 };
 
-export default function TournoisPizzasPage() {
+export default async function TournoisPizzasPage() {
+  const pastTournaments = await getPizzaTournamentArticles();
+
   return (
     <>
       <section className="bg-forest-deep py-20 text-paper">
@@ -56,6 +60,25 @@ export default function TournoisPizzasPage() {
           </Reveal>
         </Container>
       </section>
+
+      {pastTournaments.length > 0 && (
+        <section className="py-20">
+          <Container>
+            <Reveal>
+              <SectionHeading
+                eyebrow="Éditions passées"
+                title="Les tournois pizzas des saisons précédentes"
+                description="Retrouvez les photos et comptes-rendus des tournois pizzas déjà organisés par le club."
+              />
+              <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                {pastTournaments.map((article) => (
+                  <ArticleCard key={article.slug} article={article} />
+                ))}
+              </div>
+            </Reveal>
+          </Container>
+        </section>
+      )}
     </>
   );
 }

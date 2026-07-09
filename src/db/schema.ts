@@ -8,6 +8,12 @@ export const users = pgTable("users", {
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
+export const newsletterSubscribers = pgTable("newsletter_subscribers", {
+  id: serial("id").primaryKey(),
+  email: text("email").notNull().unique(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
 export const articles = pgTable("articles", {
   id: serial("id").primaryKey(),
   slug: text("slug").notNull().unique(),

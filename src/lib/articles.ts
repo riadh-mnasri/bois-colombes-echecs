@@ -34,3 +34,10 @@ export async function getArticleBySlug(slug: string): Promise<Article | undefine
   const articles = await getAllArticles();
   return articles.find((a) => a.slug === slug);
 }
+
+export async function getPizzaTournamentArticles(): Promise<Article[]> {
+  const articles = await getAllArticles();
+  return articles.filter(
+    (a) => /^vendredi\s/i.test(a.title) || /pizza/i.test(a.title) || /pizza/i.test(a.slug)
+  );
+}
