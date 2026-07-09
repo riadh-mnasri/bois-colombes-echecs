@@ -8,6 +8,15 @@ export const articles = [
     body: "En Top Jeunes, la plus haute division nationale des compétitions d'échecs jeunes, l'équipe du Cercle d'Échecs de Bois-Colombes termine vice-championne de France, avec un classement final de 2e place sur 8 équipes engagées.\n\nBravo à Iskander, Joshua, Adhyayan, Charles, Mathias, Vaishak, Leo, Sakithyan et Gurvann pour cette belle performance, ainsi qu'à leurs entraîneurs qui les ont accompagnés tout au long de la saison.",
     images: [
       "https://www.bois-colombes-echecs.com/wp-content/uploads/2026/01/WhatsApp-Image-2026-05-25-at-16.02.17-7-1-e1780843655921.jpeg",
+      "https://www.bois-colombes-echecs.com/wp-content/uploads/2026/01/WhatsApp-Image-2026-05-25-at-14.39.29-1-1-e1780843581819.jpeg",
+      "https://www.bois-colombes-echecs.com/wp-content/uploads/2026/01/WhatsApp-Image-2026-05-25-at-16.01.34-2-e1780843484868.jpeg",
+      "https://www.bois-colombes-echecs.com/wp-content/uploads/2026/01/WhatsApp-Image-2026-05-25-at-16.01.34-1.jpeg",
+      "https://www.bois-colombes-echecs.com/wp-content/uploads/2026/01/WhatsApp-Image-2026-05-25-at-16.02.17-8.jpeg",
+      "https://www.bois-colombes-echecs.com/wp-content/uploads/2026/01/WhatsApp-Image-2026-05-25-at-16.02.17-7.jpeg",
+      "https://www.bois-colombes-echecs.com/wp-content/uploads/2026/01/WhatsApp-Image-2026-05-25-at-16.01.35-2-scaled.jpeg",
+      "https://www.bois-colombes-echecs.com/wp-content/uploads/2026/01/WhatsApp-Image-2026-05-25-at-14.39.29-2.jpeg",
+      "https://www.bois-colombes-echecs.com/wp-content/uploads/2026/01/WhatsApp-Image-2026-05-25-at-14.39.29-1.jpeg",
+      "https://www.bois-colombes-echecs.com/wp-content/uploads/2026/01/WhatsApp-Image-2026-05-25-at-16.02.17-6.jpeg",
     ],
   },
   {
@@ -19,6 +28,7 @@ export const articles = [
     body: "La 22e édition du Bois-Colombes Chess Master s'est tenue du 26 au 30 décembre 2025, avec un record de participation : 604 joueurs venus de 40 fédérations différentes, répartis sur trois divisions.\n\nAnatole Vlachos remporte l'Open A, devant les maîtres internationaux Aronyak Ghosh et Liyanage Ranindu Dilshan, respectivement 2e et 3e. Le joueur chinois Wenbin Shao y a par ailleurs réalisé une norme de maître international, une performance marquante de ce tournoi.",
     images: [
       "https://www.bois-colombes-echecs.com/wp-content/uploads/2025/12/Visu-accueilv3-1-e1767043040849.jpg",
+      "https://www.bois-colombes-echecs.com/wp-content/uploads/2025/12/BCCM-22e-edition2.jpg",
     ],
   },
   {
@@ -30,6 +40,7 @@ export const articles = [
     body: "Le Championnat des Hauts-de-Seine 2025/2026 s'est déroulé les 8 et 9 novembre puis le 23 novembre 2025. Les jeunes du Cercle d'Échecs de Bois-Colombes y décrochent 3 titres de champion et de nombreux podiums dans plusieurs catégories d'âge.\n\nChampions du club : Seji Mnasri (U12), Lili Pinçon (U12) et Cecilia Pereira Garza (U16), accompagnés de plusieurs vice-champions et troisièmes places dans les catégories plus jeunes.",
     images: [
       "https://www.bois-colombes-echecs.com/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-23-at-19.21.23.jpeg",
+      "https://www.bois-colombes-echecs.com/wp-content/uploads/2025/11/PXL_20251108_123214825-scaled-e1763932967974.jpg",
     ],
   },
   {
@@ -41,6 +52,15 @@ export const articles = [
     body: "Le Cercle d'Échecs de Bois-Colombes a organisé le 31 août 2025 la première étape du Festival Jeunes IdF, avec trois tournois distincts : un open principal en 9 rondes à cadence rapide (12 minutes + 3 secondes par coup), un challenge jeunes destiné aux débutants, et un tournoi ouvert aux accompagnateurs.\n\nLes classements, calculés selon les normes de performance FIDE d'octobre 2025, ont mis en valeur les progrès des jeunes joueurs dans leurs différentes catégories d'âge.",
     images: [
       "https://www.bois-colombes-echecs.com/wp-content/uploads/2025/09/PXL_20250831_151719117.MP_-1.jpg",
+      "https://www.bois-colombes-echecs.com/wp-content/uploads/2025/09/PXL_20250831_161909487-scaled.jpg",
+      "https://www.bois-colombes-echecs.com/wp-content/uploads/2025/09/PXL_20250831_163412575-scaled.jpg",
+      "https://www.bois-colombes-echecs.com/wp-content/uploads/2025/09/PXL_20250831_163511395-scaled.jpg",
+      "https://www.bois-colombes-echecs.com/wp-content/uploads/2025/09/PXL_20250831_163619134.PORTRAIT-scaled.jpg",
+      "https://www.bois-colombes-echecs.com/wp-content/uploads/2025/09/PXL_20250831_163717255-scaled.jpg",
+      "https://www.bois-colombes-echecs.com/wp-content/uploads/2025/09/PXL_20250831_163829093-scaled.jpg",
+      "https://www.bois-colombes-echecs.com/wp-content/uploads/2025/09/PXL_20250831_163933721-scaled.jpg",
+      "https://www.bois-colombes-echecs.com/wp-content/uploads/2025/09/PXL_20250831_164033820-scaled.jpg",
+      "https://www.bois-colombes-echecs.com/wp-content/uploads/2025/09/PXL_20250831_164125175-scaled.jpg",
     ],
   },
   {
@@ -52,6 +72,7 @@ export const articles = [
     body: "Le Championnat de France d'échecs 2025 s'est déroulé à Vichy, au Palais des Congrès, sur 9 rondes à la cadence de 1h30 + 40 minutes avec 30 secondes d'incrément par coup.\n\nÉmile Bassini, entraîneur du club et Maître FIDE, y remporte l'Open Accession Roger Ferry avec 7 points sur 9, devant Peio Duboué (Échiquier de l'Erdre) et Simon Lamaze (Marseille-Échecs).",
     images: [
       "https://www.bois-colombes-echecs.com/wp-content/uploads/2026/06/54742104236_2d1978c3e0_o-1-scaled-e1780952812275.jpg",
+      "https://www.bois-colombes-echecs.com/wp-content/uploads/2026/06/afficheVichy2025A.jpg",
     ],
   },
 ];
