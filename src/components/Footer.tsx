@@ -3,6 +3,9 @@ import Image from "next/image";
 import { Container } from "./Container";
 import { club } from "@/lib/content";
 import logo from "../../public/brand/logo-cebc.png";
+import distingoLogo from "../../public/brand/distingo-bank.png";
+import clubFormateurBadge from "../../public/brand/club-formateur.png";
+import zeroToleranceBadge from "../../public/brand/zero-tolerance.jpg";
 
 export function Footer() {
   return (
@@ -35,15 +38,23 @@ export function Footer() {
         </div>
       </Container>
 
+      <div className="border-t border-line/70 py-8">
+        <Container className="flex flex-col items-center gap-3 text-center">
+          <p className="text-xs font-medium uppercase tracking-[0.2em] text-wood">Partenaire du club</p>
+          <Image src={distingoLogo} alt="Distingo Bank, partenaire du Cercle d'Échecs de Bois-Colombes" className="h-8 w-auto" />
+        </Container>
+      </div>
+
       <div className="border-t border-line/70 py-6">
-        <Container className="flex flex-col gap-2 text-xs text-ink-soft sm:flex-row sm:items-center sm:justify-between">
-          <p>&copy; {new Date().getFullYear()} {club.name}</p>
-          <p className="flex items-center gap-4">
-            <span>Club Formateur &middot; Zéro Tolérance</span>
-            <Link href="/admin/login" className="hover:text-ink">
+        <Container className="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
+          <p className="text-xs text-ink-soft">&copy; {new Date().getFullYear()} {club.name}</p>
+          <div className="flex items-center gap-5">
+            <Image src={clubFormateurBadge} alt="Label Club Formateur FFE" className="h-14 w-auto" />
+            <Image src={zeroToleranceBadge} alt="Zéro Tolérance pour les violences" className="h-14 w-auto rounded" />
+            <Link href="/admin/login" className="text-xs text-ink-soft hover:text-ink">
               Administration
             </Link>
-          </p>
+          </div>
         </Container>
       </div>
     </footer>
