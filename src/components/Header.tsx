@@ -1,5 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "./Container";
+import logo from "../../public/brand/logo-cebc.png";
 
 const links = [
   { href: "/le-club", label: "Le Club" },
@@ -12,14 +14,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-line/70 bg-paper/90 backdrop-blur">
       <Container className="flex h-20 items-center justify-between">
-        <Link href="/" className="flex items-center gap-3">
-          <span className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-forest text-lg leading-none text-gold-soft">
-            ♞
-          </span>
-          <span className="font-display text-lg font-medium leading-tight">
-            Cercle d&rsquo;Échecs
-            <br className="hidden sm:block" /> de Bois-Colombes
-          </span>
+        <Link href="/" className="flex items-center">
+          <Image src={logo} alt="Cercle d'Échecs de Bois-Colombes" className="h-11 w-auto sm:h-12" priority />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">

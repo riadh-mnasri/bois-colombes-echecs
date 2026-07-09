@@ -1,14 +1,16 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "./Container";
 import { club } from "@/lib/content";
+import logo from "../../public/brand/logo-cebc.png";
 
 export function Footer() {
   return (
     <footer className="border-t border-line/70 bg-paper-dim">
       <Container className="grid gap-10 py-14 sm:grid-cols-3">
         <div>
-          <p className="font-display text-lg font-medium">{club.name}</p>
-          <p className="mt-3 text-sm text-ink-soft">
+          <Image src={logo} alt="Cercle d'Échecs de Bois-Colombes" className="h-10 w-auto" />
+          <p className="mt-4 text-sm text-ink-soft">
             Former, encadrer et faire progresser les joueuses et joueurs d&rsquo;échecs de Bois-Colombes depuis plus de 30 ans.
           </p>
         </div>
