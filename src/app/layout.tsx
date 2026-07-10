@@ -28,8 +28,13 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${fraunces.variable} ${inter.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col bg-paper text-ink">
+        <a href="#contenu" className="skip-link">
+          Aller au contenu
+        </a>
         <Header />
-        <main className="flex-1">{children}</main>
+        <main id="contenu" className="flex-1">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

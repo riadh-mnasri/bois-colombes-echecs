@@ -22,6 +22,7 @@ export default function LeClubPage() {
           alt="Podium du Championnat de France, avec Émile Bassini vainqueur de l'Open Accession"
           fill
           priority
+          placeholder="blur"
           sizes="100vw"
           className="hero-photo object-cover object-[center_60%]"
         />
@@ -156,6 +157,7 @@ export default function LeClubPage() {
           src={boardPhoto}
           alt="Remise des trophées du Championnat des Hauts-de-Seine"
           fill
+          placeholder="blur"
           sizes="100vw"
           className="object-cover object-top"
         />

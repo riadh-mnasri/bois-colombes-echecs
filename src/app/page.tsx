@@ -61,6 +61,7 @@ export default async function HomePage() {
           alt="Tournoi jeunes organisé par le Cercle d'Échecs de Bois-Colombes"
           fill
           priority
+          placeholder="blur"
           sizes="100vw"
           className="hero-photo object-cover"
         />
