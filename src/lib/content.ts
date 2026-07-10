@@ -1,3 +1,5 @@
+export type ScheduleRow = { what: string; when: string; time?: string };
+
 export const articles = [
   {
     slug: "top-jeunes-saison-2025-2026",
@@ -216,12 +218,12 @@ export const youthPricing = {
   nonLocal: "250 €",
   note: "Réduction de 50 % sur la cotisation à partir du 3ᵉ membre d'une même famille.",
   schedule: [
-    "Mercredi et samedi, Petit-poussin : 9h30–10h30",
-    "Mercredi et samedi, Poussin : 10h30–12h00",
-    "Mercredi et samedi, Pupille : 13h30–15h30",
-    "Mercredi et samedi, Benjamin et + : 15h30–17h30",
-    "Tournois Pizzas, environ 7 vendredis soir dans la saison",
-  ],
+    { what: "Petit-poussin", when: "Mercredi et samedi", time: "9h30–10h30" },
+    { what: "Poussin", when: "Mercredi et samedi", time: "10h30–12h00" },
+    { what: "Pupille", when: "Mercredi et samedi", time: "13h30–15h30" },
+    { what: "Benjamin et +", when: "Mercredi et samedi", time: "15h30–17h30" },
+    { what: "Tournois Pizzas", when: "Vendredis soir", time: "7 soirées dans la saison" },
+  ] as ScheduleRow[],
   registrationUrl:
     "https://www.billetweb.fr/shop.php?event=adhesions-jeunes-2026-2027-cercle-dechecs-de-bois-colombes",
 };
@@ -231,11 +233,11 @@ export const adultPricing = {
   veteran: { local: "165 €", nonLocal: "195 €", note: "nés en 1966 ou avant" },
   note: "Réduction de 50 % sur la cotisation à partir du 3ᵉ membre d'une même famille.",
   schedule: [
-    "Mardi 20h30–22h30, cours perfectionnement (1700 Elo et +)",
-    "Mercredi 21h00–23h30, entraînement d'équipe",
-    "Jeudi 20h30–22h40, cours débutants / intermédiaires",
-    "Mercredi et vendredi, parties libres",
-  ],
+    { what: "Cours perfectionnement (1700 Elo et +)", when: "Mardi", time: "20h30–22h30" },
+    { what: "Entraînement d'équipe", when: "Mercredi", time: "21h00–23h30" },
+    { what: "Cours débutants / intermédiaires", when: "Jeudi", time: "20h30–22h40" },
+    { what: "Parties libres", when: "Mercredi et vendredi" },
+  ] as ScheduleRow[],
   registrationUrl:
     "https://www.billetweb.fr/shop.php?event=adhesions-adultes-2026-2027-cercle-dechecs-de-bois-colombes",
 };

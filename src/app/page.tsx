@@ -7,9 +7,32 @@ import { Reveal } from "@/components/Reveal";
 import { PlayableBoard } from "@/components/PlayableBoard";
 import { CountUp } from "@/components/CountUp";
 import { Ornament } from "@/components/Ornament";
-import { stats, recentResults, orientations, club } from "@/lib/content";
+import { stats, recentResults, orientations, club, tournoisPizzas } from "@/lib/content";
 import { getAllArticles } from "@/lib/articles";
 import festivalPhoto from "../../public/photos/festival-jeunes.jpg";
+
+const frenchMonths: Record<string, number> = {
+  janvier: 0,
+  février: 1,
+  mars: 2,
+  avril: 3,
+  mai: 4,
+  juin: 5,
+  juillet: 6,
+  août: 7,
+  septembre: 8,
+  octobre: 9,
+  novembre: 10,
+  décembre: 11,
+};
+
+function parseFrenchDate(label: string): Date | null {
+  const m = label.toLowerCase().match(/(\d{1,2})(?:er)?\s+([a-zéûà]+)\s+(\d{4})/);
+  if (!m) return null;
+  const month = frenchMonths[m[2]];
+  if (month === undefined) return null;
+  return new Date(Number(m[3]), month, Number(m[1]));
+}
 
 const distinctions = [
   "22 titres de Champion(ne) de France Jeunes",
@@ -21,6 +44,14 @@ const distinctions = [
 
 export default async function HomePage() {
   const articles = await getAllArticles();
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const upcomingPizzaDates = tournoisPizzas.dates2025_2026.filter((label) => {
+    const date = parseFrenchDate(label);
+    return date !== null && date >= today;
+  });
+  const nextPizzaDate = upcomingPizzaDates[0] ?? null;
 
   return (
     <>
@@ -141,6 +172,72 @@ export default async function HomePage() {
               {articles.slice(0, 3).map((article) => (
                 <ArticleCard key={article.slug} article={article} />
               ))}
+            </div>
+          </Reveal>
+        </Container>
+      </section>
+
+      <section className="relative overflow-hidden bg-wood-deep py-24 text-paper">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-y-0 right-0 w-1/3 opacity-[0.05]"
+          style={{
+            backgroundImage: "repeating-conic-gradient(#fff 0% 25%, transparent 0% 50%)",
+            backgroundSize: "56px 56px",
+          }}
+        />
+        <Container className="relative">
+          <Reveal className="grid items-center gap-12 lg:grid-cols-[1fr_minmax(0,420px)]">
+            <div>
+              <p className="mb-3 flex items-center gap-3 text-sm font-medium uppercase tracking-[0.2em] text-gold-soft">
+                <span aria-hidden className="h-px w-8 bg-gold-soft" />
+                Vendredis soir
+              </p>
+              <h2 className="text-balance font-display text-3xl font-medium sm:text-4xl">
+                Les Tournois Pizzas, l&rsquo;autre visage du club
+              </h2>
+              <p className="mt-4 max-w-xl text-paper/80">{tournoisPizzas.description}</p>
+              <p className="mt-3 text-sm text-paper/60">{tournoisPizzas.note}</p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <Button href="/tournois-pizzas">Découvrir les Tournois Pizzas</Button>
+              </div>
+            </div>
+            <div className="rounded-2xl border border-paper/15 bg-paper/5 p-8">
+              {nextPizzaDate ? (
+                <>
+                  <p className="text-sm font-medium uppercase tracking-[0.2em] text-gold-soft">
+                    Prochaine édition
+                  </p>
+                  <p className="mt-4 font-display text-3xl font-medium leading-tight text-paper sm:text-4xl">
+                    {nextPizzaDate}
+                  </p>
+                  {upcomingPizzaDates.length > 1 && (
+                    <>
+                      <p className="mt-8 text-sm font-medium uppercase tracking-[0.15em] text-paper/60">
+                        Et ensuite
+                      </p>
+                      <ul className="mt-3 space-y-2 text-sm text-paper/80">
+                        {upcomingPizzaDates.slice(1, 4).map((date) => (
+                          <li key={date}>{date}</li>
+                        ))}
+                      </ul>
+                    </>
+                  )}
+                </>
+              ) : (
+                <>
+                  <p className="text-sm font-medium uppercase tracking-[0.2em] text-gold-soft">
+                    Prochaine saison
+                  </p>
+                  <p className="mt-4 font-display text-2xl font-medium leading-snug text-paper sm:text-3xl">
+                    Les dates de la saison à venir seront bientôt annoncées.
+                  </p>
+                  <p className="mt-4 text-sm text-paper/70">
+                    Environ 7 vendredis soir dans la saison. Abonnez-vous à la newsletter ou
+                    consultez l&rsquo;agenda pour ne rien manquer.
+                  </p>
+                </>
+              )}
             </div>
           </Reveal>
         </Container>

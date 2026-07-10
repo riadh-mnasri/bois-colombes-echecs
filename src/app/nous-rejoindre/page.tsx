@@ -72,9 +72,18 @@ export default function NousRejoindrePage() {
 
           <div className="mt-6 rounded-2xl border border-line bg-paper-dim p-6">
             <p className="text-sm font-medium uppercase tracking-wide text-wood">Horaires des cours</p>
-            <ul className="mt-4 grid gap-2 text-sm text-ink-soft sm:grid-cols-2">
-              {youthPricing.schedule.map((line) => (
-                <li key={line}>{line}</li>
+            <ul className="mt-4 grid gap-x-10 text-sm sm:grid-cols-2">
+              {youthPricing.schedule.map((row) => (
+                <li
+                  key={`${row.what}-${row.when}`}
+                  className="flex flex-wrap items-baseline justify-between gap-x-4 border-b border-line/70 py-2"
+                >
+                  <span className="text-ink">{row.what}</span>
+                  <span className="text-ink-soft">
+                    <span className="font-medium text-wood">{row.when}</span>
+                    {row.time && <> &middot; {row.time}</>}
+                  </span>
+                </li>
               ))}
             </ul>
           </div>
@@ -114,9 +123,16 @@ export default function NousRejoindrePage() {
 
             <div className="rounded-2xl border border-line bg-paper p-6">
               <p className="text-sm font-medium uppercase tracking-wide text-wood">Horaires des cours</p>
-              <ul className="mt-4 space-y-2 text-sm text-ink-soft">
-                {adultPricing.schedule.map((line) => (
-                  <li key={line}>{line}</li>
+              <ul className="mt-4 text-sm">
+                {adultPricing.schedule.map((row) => (
+                  <li
+                    key={`${row.what}-${row.when}`}
+                    className="border-b border-line/70 py-2 last:border-0"
+                  >
+                    <span className="font-medium text-wood">{row.when}</span>
+                    {row.time && <span className="text-ink-soft"> &middot; {row.time}</span>}
+                    <span className="block text-ink-soft">{row.what}</span>
+                  </li>
                 ))}
               </ul>
             </div>

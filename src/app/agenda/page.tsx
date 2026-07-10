@@ -3,6 +3,7 @@ import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
+import { ScheduleCard } from "@/components/ScheduleCard";
 import { youthPricing, adultPricing, tournoisPizzas, club } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -27,23 +28,9 @@ export default function AgendaPage() {
         <Container>
           <Reveal>
             <SectionHeading eyebrow="Chaque semaine" title="Horaires des cours" />
-            <div className="mt-10 grid gap-6 lg:grid-cols-2">
-              <div className="rounded-2xl border border-line p-6">
-                <p className="text-sm font-medium uppercase tracking-wide text-wood">Jeunes</p>
-                <ul className="mt-4 space-y-2 text-sm text-ink-soft">
-                  {youthPricing.schedule.map((line) => (
-                    <li key={line}>{line}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className="rounded-2xl border border-line p-6">
-                <p className="text-sm font-medium uppercase tracking-wide text-wood">Adultes</p>
-                <ul className="mt-4 space-y-2 text-sm text-ink-soft">
-                  {adultPricing.schedule.map((line) => (
-                    <li key={line}>{line}</li>
-                  ))}
-                </ul>
-              </div>
+            <div className="mt-10 grid gap-8 lg:grid-cols-2">
+              <ScheduleCard title="Jeunes" rows={youthPricing.schedule} />
+              <ScheduleCard title="Adultes" rows={adultPricing.schedule} />
             </div>
           </Reveal>
         </Container>
