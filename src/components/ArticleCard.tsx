@@ -30,17 +30,9 @@ export function ArticleCard({ article }: { article: Article }) {
               alt={article.title}
               fill
               sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-              className="object-cover grayscale contrast-110 transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0 group-hover:contrast-100"
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
           </ViewTransition>
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-forest via-wood to-gold-soft mix-blend-color transition-opacity duration-700 group-hover:opacity-0"
-          />
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-0 bg-forest-deep/20 mix-blend-multiply transition-opacity duration-700 group-hover:opacity-0"
-          />
         </div>
         <div className="p-6">
           <p className="text-xs font-medium uppercase tracking-[0.15em] text-wood">{formattedDate}</p>
