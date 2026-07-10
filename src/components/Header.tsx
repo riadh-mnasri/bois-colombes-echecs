@@ -35,18 +35,18 @@ export function Header() {
             />
           </Link>
 
-          <nav className="hidden items-center gap-10 md:flex">
+          <nav className="hidden items-center gap-5 lg:flex xl:gap-7">
             <NavLinks />
           </nav>
 
           <Link
             href="/nous-rejoindre"
-            className="hidden rounded-full bg-forest px-5 py-2.5 text-sm font-medium text-paper transition-colors hover:bg-forest-deep md:inline-flex"
+            className="hidden rounded-full bg-forest px-5 py-2.5 text-sm font-medium text-paper transition-colors hover:bg-forest-deep xl:inline-flex"
           >
             Adhérer
           </Link>
 
-          <details className="md:hidden">
+          <details className="lg:hidden">
             <summary className="list-none rounded-full border border-line p-2">
               <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2}>
                 <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" />

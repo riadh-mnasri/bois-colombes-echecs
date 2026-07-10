@@ -7,6 +7,7 @@ const links = [
   { href: "/le-club", label: "Le Club" },
   { href: "/competitions", label: "Compétitions" },
   { href: "/actualites", label: "Actualités" },
+  { href: "/tournois-pizzas", label: "Tournois Pizzas" },
   { href: "/agenda", label: "Agenda" },
   { href: "/nous-rejoindre", label: "Nous rejoindre" },
   { href: "/contact", label: "Contact" },
@@ -44,7 +45,7 @@ export function NavLinks({ mobile = false }: { mobile?: boolean }) {
           <Link
             key={link.href}
             href={link.href}
-            className={`group relative py-1 text-xs font-medium uppercase tracking-[0.14em] transition-colors ${
+            className={`group relative whitespace-nowrap py-1 text-xs font-medium uppercase tracking-[0.14em] transition-colors ${
               active ? "text-ink" : "text-ink-soft hover:text-ink"
             }`}
           >
