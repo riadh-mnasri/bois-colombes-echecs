@@ -8,13 +8,13 @@ import distingoLogo from "../../public/brand/distingo-bank.png";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 bg-paper/90 backdrop-blur">
-      <div className="hidden border-b border-line/70 bg-forest-deep sm:block">
-        <Container className="flex h-9 items-center justify-between text-xs text-paper/85">
-          <NewsletterModal className="font-medium text-gold-soft hover:text-paper" />
+    <header className="sticky top-0 z-50 bg-forest-deep/95 text-paper backdrop-blur">
+      <div className="hidden border-b border-paper/10 sm:block">
+        <Container className="flex h-9 items-center justify-between text-xs text-paper/70">
+          <NewsletterModal className="font-medium text-gold-soft transition-colors hover:text-paper" />
           <div className="flex items-center gap-2">
             <span>Distingo Bank, partenaire du club</span>
-            <span className="text-paper/40">&middot;</span>
+            <span className="text-paper/30">&middot;</span>
             <Image
               src={distingoLogo}
               alt="Distingo Bank"
@@ -24,15 +24,17 @@ export function Header() {
         </Container>
       </div>
 
-      <div className="border-b border-line/70">
+      <div className="border-b border-gold/25">
         <Container className="flex h-24 items-center justify-between">
           <Link href="/" className="flex items-center">
-            <Image
-              src={logo}
-              alt="Cercle d'Échecs de Bois-Colombes"
-              className="h-16 w-auto sm:h-[4.5rem]"
-              priority
-            />
+            <span className="inline-flex rounded-xl bg-paper px-2.5 py-1.5 shadow-sm">
+              <Image
+                src={logo}
+                alt="Cercle d'Échecs de Bois-Colombes"
+                className="h-14 w-auto sm:h-16"
+                priority
+              />
+            </span>
           </Link>
 
           <nav className="hidden items-center gap-5 lg:flex xl:gap-7">
@@ -41,20 +43,20 @@ export function Header() {
 
           <Link
             href="/nous-rejoindre"
-            className="hidden rounded-full bg-forest px-5 py-2.5 text-sm font-medium text-paper transition-colors hover:bg-forest-deep xl:inline-flex"
+            className="btn-sheen hidden rounded-full bg-gold px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-gold-soft xl:inline-flex"
           >
             Adhérer
           </Link>
 
           <details className="lg:hidden">
-            <summary className="list-none rounded-full border border-line p-2">
+            <summary className="list-none rounded-full border border-paper/30 p-2 text-paper">
               <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2}>
                 <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" />
               </svg>
             </summary>
-            <nav className="absolute left-0 right-0 top-24 flex flex-col gap-1 border-b border-line bg-paper p-4">
+            <nav className="absolute left-0 right-0 top-24 flex flex-col gap-1 border-b border-paper/10 bg-forest-deep p-4">
               <NavLinks mobile />
-              <NewsletterModal className="rounded-lg px-3 py-2.5 text-left font-medium text-wood hover:bg-paper-dim" />
+              <NewsletterModal className="rounded-lg px-3 py-2.5 text-left font-medium text-gold-soft hover:bg-paper/10" />
             </nav>
           </details>
         </Container>
