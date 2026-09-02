@@ -76,9 +76,14 @@ export function Footer() {
       <div className="border-t border-line/70 py-6">
         <Container className="flex flex-col items-center gap-3 text-xs text-ink-soft sm:flex-row sm:justify-between">
           <p>&copy; {new Date().getFullYear()} {club.name}</p>
-          <Link href="/admin/login" className="hover:text-ink">
-            Administration
-          </Link>
+          <div className="flex items-center gap-4">
+            <a href="https://riadh-mnasri.pro" className="hover:text-ink">
+              Site par Riadh MNASRI
+            </a>
+            <Link href="/admin/login" className="hover:text-ink">
+              Administration
+            </Link>
+          </div>
         </Container>
       </div>
     </footer>
